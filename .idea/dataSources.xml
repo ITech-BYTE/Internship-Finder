@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2446591899">
+    <data-source source="LOCAL" name="Django default" uuid="026539f9-5e6e-43b6-80fa-290adc4480d5">
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/ifinder/../ifinder.db</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
