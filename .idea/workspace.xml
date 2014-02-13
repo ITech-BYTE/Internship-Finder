@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e468d8c-53e4-45dc-8acb-e68d406e5b8e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ifinder.db" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/models.py" afterPath="$PROJECT_DIR$/ifinder_main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder/settings.py" afterPath="$PROJECT_DIR$/ifinder/settings.py" />
     </list>
     <ignored path="ifinder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ifinder/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="4" selection-start="4399" selection-end="4399" vertical-scroll-proportion="0.0" vertical-offset="1434" max-vertical-offset="2550">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2535">
               <folding />
             </state>
           </provider>
@@ -56,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="33" selection-start="508" selection-end="508" vertical-scroll-proportion="0.4314721" vertical-offset="0" max-vertical-offset="735">
+            <state line="17" column="33" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -85,10 +83,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ifinder/settings.py" />
         <option value="$PROJECT_DIR$/ifinder/urls.py" />
         <option value="$PROJECT_DIR$/ifinder_main/admin.py" />
         <option value="$PROJECT_DIR$/ifinder_main/models.py" />
+        <option value="$PROJECT_DIR$/ifinder/settings.py" />
       </list>
     </option>
   </component>
@@ -466,17 +464,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="33" selection-start="508" selection-end="508" vertical-scroll-proportion="0.4314721" vertical-offset="0" max-vertical-offset="735">
+        <state line="17" column="33" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ifinder/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="4" selection-start="4399" selection-end="4399" vertical-scroll-proportion="0.0" vertical-offset="1434" max-vertical-offset="2550">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -493,6 +484,13 @@
           <folding>
             <element signature="e#22#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ifinder/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2535">
+          <folding />
         </state>
       </provider>
     </entry>
