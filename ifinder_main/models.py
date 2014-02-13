@@ -1,30 +1,21 @@
 from django.db import models
-
-class User(models.Model):
-    username = models.CharField(max_length=20, unique=True)
-    password = models.CharField(max_length=20)
-    fname = models.CharField(max_length=20)
-    lname = models.CharField(max_length=20)
-    type = models.CharField(max_length=15)
-
-    def __unicode__(self):
-        return self.username
+from django.contrib.auth.models import User
 
 class Intern(models.Model):
-    username = models.OneToOneField(User)
+    user = models.OneToOneField(User)
     dob = models.DateField()
     email = models.CharField(max_length=50)
 
     def __unicode__(self):
-        return self.username
+        return self.user.username
 
 class Company(models.Model):
     company_id = models.CharField(max_length=20, unique=True)
-    username = models.OneToOneField(User)
+    user = models.OneToOneField(User)
     url = models.URLField(max_length=100)
 
     def __unicode__(self):
-        return self.username
+        return self.user.username
 
 class Skill(models.Model):
     skill_id = models.CharField(max_length=5, unique=True)
