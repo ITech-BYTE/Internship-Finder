@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 class Intern(models.Model):
     user = models.OneToOneField(User)
     dob = models.DateField()
-    email = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.user.username
