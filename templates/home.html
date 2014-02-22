@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Internship Finder </title>
+</head>
+<body>
+    <h1> Welcome to Internship Finder </h1>
+
+    {% if user.is_authenticated %}
+    <p> You are already logged in. </p>
+    <a href="/logout/"> Logout </a>
+    {% else %}
+    <p> You are not logged in. </p>
+    <a href="/company/register/"> Company Registration </a>
+        <br />
+    <a href="/intern/register/"> Intern Registration </a>
+        <br />
+    <a href="/login/"> Already a member? Login. </a>
+    {% endif %}
+
+</body>
+</html>

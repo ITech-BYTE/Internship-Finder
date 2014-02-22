@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Internship </title>
+</head>
+<body>
+    <h1> Internship Details </h1>
+
+    <!-- Check if internship exists and show details -->
+    {% if internship %}
+        <h2> Name: {{ internship.job_name }}</h2>
+        <h3> by {{ company.company_name }}</h3>
+        <h3> Description: </h3>
+        <p> {{ internship.job_description }}</p>
+        <h3> Required skills: </h3>
+
+        <!-- Print required skill list if there is any -->
+        {% if skills %}
+        <ul>
+            {% for jobskill in skills %}
+            <li> {{ jobskill.skill }}</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Print no skills required if the skills list is empty -->
+        {% else %}
+            <p> No skills required.</p>
+        {%  endif %}
+
+        <!-- Show apply link if the user is logged in as an intern -->
+        {% if is_intern %}
+            <p> Apply </p>
+        {% endif %}
+
+    <!-- Notify the user if the internship does not exit -->
+    {% else %}
+        <p> Internship missing </p>
+    {% endif %}
+</body>
+</html>
