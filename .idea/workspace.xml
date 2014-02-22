@@ -4,9 +4,7 @@
     <list default="true" id="6e468d8c-53e4-45dc-8acb-e68d406e5b8e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder.db" afterPath="$PROJECT_DIR$/ifinder.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/models.py" afterPath="$PROJECT_DIR$/ifinder_main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder/settings.py" afterPath="$PROJECT_DIR$/ifinder/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder/urls.py" afterPath="$PROJECT_DIR$/ifinder/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/views.py" afterPath="$PROJECT_DIR$/ifinder_main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/intern/register.html" afterPath="$PROJECT_DIR$/templates/intern/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ifinder.iws" />
@@ -39,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="register.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/intern/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="48" selection-start="408" selection-end="408" vertical-scroll-proportion="0.3968254" vertical-offset="0" max-vertical-offset="567">
+            <state line="15" column="46" selection-start="406" selection-end="406" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -60,7 +58,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ifinder_main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="87" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.0" vertical-offset="294" max-vertical-offset="945">
+            <state line="58" column="87" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
@@ -69,7 +67,7 @@
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ifinder_main/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="24" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+            <state line="16" column="24" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -93,11 +91,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="28" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-              <folding />
+            <state line="20" column="26" selection-start="491" selection-end="491" vertical-scroll-proportion="0.26395938" vertical-offset="144" max-vertical-offset="795">
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,8 +126,8 @@
         <option value="$PROJECT_DIR$/ifinder_main/urls.py" />
         <option value="$PROJECT_DIR$/ifinder/urls.py" />
         <option value="$PROJECT_DIR$/ifinder_main/forms.py" />
-        <option value="$PROJECT_DIR$/ifinder_main/models.py" />
         <option value="$PROJECT_DIR$/templates/intern/register.html" />
+        <option value="$PROJECT_DIR$/ifinder_main/models.py" />
       </list>
     </option>
   </component>
@@ -163,7 +163,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -230,6 +229,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,7 +324,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ifinder" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -350,27 +370,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ifinder" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -502,7 +502,9 @@
     <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="26" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="870">
-          <folding />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -530,7 +532,9 @@
     <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="35" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="870">
-          <folding />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -581,17 +585,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/intern/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+        <state line="15" column="46" selection-start="406" selection-end="406" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="540">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/intern/register.html">
+    <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="48" selection-start="408" selection-end="408" vertical-scroll-proportion="0.3968254" vertical-offset="0" max-vertical-offset="567">
-          <folding />
+        <state line="20" column="26" selection-start="491" selection-end="491" vertical-scroll-proportion="0.26395938" vertical-offset="144" max-vertical-offset="795">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

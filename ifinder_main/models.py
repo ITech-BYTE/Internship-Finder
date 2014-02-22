@@ -1,16 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Intern(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(User)
+    
+    def __unicode__(self):
+        return self.user.username
+
+
+class Intern(UserProfile):
     dob = models.DateField()
 
     def __unicode__(self):
         return self.user.username
 
-class Company(models.Model):
+class Company(UserProfile):
     company_id = models.CharField(max_length=20, unique=True)
-    user = models.OneToOneField(User)
     url = models.URLField(max_length=100)
 
     def __unicode__(self):
