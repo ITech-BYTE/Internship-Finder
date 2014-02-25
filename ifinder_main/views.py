@@ -133,7 +133,7 @@ def internship_details(request, internship_id):
     context_dict = {}
 
     try:
-        internship = Job.objects.get(job_id=internship_id)
+        internship = Job.objects.get(id=internship_id)
 
         company = internship.company
 
@@ -166,6 +166,7 @@ def profile(request):
     return  HttpResponse("Profile Page")
 
 
+# TO BE REPLACED WITH ADD JOB OFFER CODE
 @login_required
 def add_offer(request):
     # Like before, get the request's context.
