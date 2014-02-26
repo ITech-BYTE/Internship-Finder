@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> Internship Finder </title>
-</head>
-<body>
-    <h1> Welcome to Internship Finder </h1>
+{% extends 'base.html' %}
 
-    {% if user.is_authenticated %}
-    <p> You are already logged in. </p>
-    <a href="/logout/"> Logout </a>
-    {% else %}
-    <p> You are not logged in. </p>
-    <a href="/company/register/"> Company Registration </a>
-        <br />
-    <a href="/intern/register/"> Intern Registration </a>
-        <br />
-    <a href="/login/"> Already a member? Login. </a>
-    {% endif %}
+{% block title %} Internship Finder Home {% endblock %}
 
-</body>
-</html>
+{% block body_block %}
+    <p> This is the main page. </p>
+{% endblock %}
