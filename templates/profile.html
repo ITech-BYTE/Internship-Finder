@@ -2,18 +2,18 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Register with Internship Finder
+Your personal profile
 {% endblock %}
 
 {% block body_block %}
-        <h1>Register with Internship Finder</h1>
+        <h1>Profile page</h1>
 
         {% if registered %}
-        <strong>Thank you for registering!</strong>
+        <strong>Successfully changed your data. </strong>
         {% else %}
-        <strong>Register here!</strong><br />
+        <strong>You can see and change your data here!</strong><br />
 
-        <form id="user_form" method="post" action="{{ action }}"
+        <form id="user_form" method="post" action="/profile/"
                 enctype="multipart/form-data">
 
             {% csrf_token %}
@@ -25,7 +25,7 @@ Register with Internship Finder
             {{ profile_form.as_p }}
 
             <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Register" />
+            <input type="submit" name="submit" value="Save changes" />
         </form>
         {% endif %}
  {% endblock %}

@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %} Home {% endblock %}
+{% block title %} Top offers {% endblock %}
 
 {% block body_block %}
     <h1> Our top offers </h1>
     {% if top_offers %}
         <ul>
             {% for offer in top_offers %}
-            <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a>- Application count: {{ offer.applicant_count }}</li>
+            <li> {{ offer }}</li>
             {% endfor %}
         </ul>
     {% else %}
@@ -18,7 +18,7 @@
     {% if latest_offers %}
         <ul>
             {% for offer in latest_offers %}
-            <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a> - {{ offer.posting_date }}</li>
+            <li> {{ offer }} </li>
             {% endfor %}
         </ul>
     {% else %}

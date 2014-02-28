@@ -5,23 +5,31 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from ifinder_main.forms import UserForm, InternForm, CompanyForm
-from ifinder_main.models import Job, JobSkill, Recruiter, Intern, UserProfile
+from django.db.models import Count
+from ifinder_main.forms import UserForm, InternForm, CompanyForm, InternEditForm, CompanyEditForm, UserEditForm
+from ifinder_main.models import Job, Recruiter, Intern, UserProfile
+from ifinder_main.jobsearch import get_job_list
 
 
 # HOMEPAGE
 def home(request):
     context = RequestContext(request)
 
-    return render_to_response("home.html", {}, context)
+    context_dict = {}
 
+    top_offers = Job.objects.annotate(applicant_count=Count('applicants')).order_by('-applicant_count')[:5]
+    latest_offers = Job.objects.order_by('-posting_date')[:5]
+
+    context_dict['top_offers'] = top_offers
+    context_dict['latest_offers'] = latest_offers
+
+    return render_to_response("home.html", context_dict, context)
 
 # LOGOUT
 def user_logout(request):
     logout(request)
 
     return HttpResponseRedirect('/')
-
 
 # INTERN REGISTRATION
 def register_intern(request):
@@ -70,6 +78,11 @@ def register(request, user_type):
             profile = profile_form.save(commit=False)
             profile.user = user
 
+            if user_type == 0:
+                profile.is_staff = True
+            elif user_type == 1:
+                profile.is_staff = False
+
             # Now we save the UserProfile model instance.
             profile.save()
 
@@ -96,7 +109,6 @@ def register(request, user_type):
         'register.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered, 'action' : action},
             context)
-
 
 # LOGIN
 def user_login(request):
@@ -125,29 +137,45 @@ def user_login(request):
     else:
         return render_to_response('login.html', {}, context)
 
-
 # INTERNSHIP DETAILS
 def internship_details(request, internship_id):
     context = RequestContext(request)
 
     context_dict = {}
 
+    just_applied = False
+
     try:
         internship = Job.objects.get(id=internship_id)
 
         company = internship.company
 
-        required_skills = JobSkill.objects.filter(job = internship)
+        required_skills = internship.skills.all()
 
         is_intern = False
         try:
             if request.user.is_authenticated():
-                is_intern = Intern.objects.get(user=request.user)
+                is_intern = not UserProfile.objects.get(user=request.user).is_industrial
 
         except UserProfile.DoesNotExist:
             pass
 
+        if request.method == 'POST':
+            internship.applicants.add(Intern.objects.get(user=request.user))
+            just_applied = True
+            has_applied = True
+        else:
+            has_applied = False
+            if is_intern:
+                intern = Intern.objects.get(user=request.user)
+                if internship.applicants.filter(id = intern.id):
+                    has_applied = True
+
+        context_dict['just_applied'] = just_applied
+
         context_dict['is_intern'] = is_intern
+
+        context_dict['has_applied'] = has_applied
 
         context_dict['internship'] = internship
 
@@ -163,4 +191,84 @@ def internship_details(request, internship_id):
 # PROFILE PAGE
 @login_required
 def profile(request):
-    return  HttpResponse("Profile Page")
+    context = RequestContext(request)
+
+    # A boolean value for telling the template whether the registration was successful.
+    valid_change = False
+
+
+    try:
+        current_userprofile = Intern.objects.get(user=request.user)
+
+    except Intern.DoesNotExist:
+        try:
+            current_userprofile = Recruiter.objects.get(user=request.user)
+
+        except Recruiter.DoesNotExist:
+            return render_to_response('error.html', {'error': "User could not be found. "},context)
+
+
+
+    # If it's a HTTP POST, we're interested in processing form data.
+    if request.method == 'POST':
+        user_form = UserEditForm(data=request.POST, instance=request.user)
+
+        if current_userprofile.is_industrial:
+            profile_form = CompanyEditForm(data=request.POST, instance=current_userprofile)
+        else:
+            profile_form = InternEditForm(data=request.POST, instance=current_userprofile)
+
+        # If the two forms are valid...
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+
+            user.set_password(user.password)
+            user.save()
+
+            profile = profile_form.save(commit=False)
+
+            profile.save()
+
+            # Update our variable to tell the template registration was successful.
+            valid_change = True
+
+        # Invalid form or forms - mistakes or something else?
+        # Print problems to the terminal.
+        # They'll also be shown to the user.
+        else:
+            print profile_form.errors, user_form.errors
+
+    # Not a HTTP POST, so we render our form using two ModelForm instances.
+    # These forms will be blank, ready for user input.
+    else:
+        user_form = UserEditForm(instance=request.user)
+        if current_userprofile.is_industrial:
+            profile_form = CompanyEditForm(instance=current_userprofile)
+        else:
+            profile_form = InternEditForm(instance=current_userprofile)
+
+    # Render the template depending on the context.
+    return render_to_response(
+        'profile.html',
+            {'user_form': user_form, 'profile_form': profile_form, 'registered': valid_change},
+            context)
+
+
+def search(request):
+    context = RequestContext(request)
+
+    return render_to_response('search.html', {}, context)
+
+
+def suggest_job(request):
+    context = RequestContext(request)
+    job_list =[]
+    contains = ''
+
+    if request.method == 'GET':
+        print request.GET['suggestion']
+        contains = request.GET['suggestion']
+
+    job_list = get_job_list(10, contains)
+
+    return render_to_response('joblist.html', {'job_list' : job_list}, context)

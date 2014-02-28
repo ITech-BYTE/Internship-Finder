@@ -3,13 +3,21 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
+    is_industrial = models.BooleanField()
 
     def __unicode__(self):
         return self.user.username
 
+class Skill(models.Model):
+    skill_name = models.CharField(max_length=30, unique=True)
+
+    def __unicode__(self):
+        return self.skill_name
+
 
 class Intern(UserProfile):
     dob = models.DateField()
+    skills = models.ManyToManyField(Skill)
 
     def __unicode__(self):
         return self.user.username
@@ -23,34 +31,13 @@ class Recruiter(UserProfile):
         return self.user.username
 
 
-class Skill(models.Model):
-    skill_name = models.CharField(max_length=30, unique=True)
-
-    def __unicode__(self):
-        return self.skill_name
-
-
 class Job(models.Model):
     company = models.ForeignKey(Recruiter)
+    skills = models.ManyToManyField(Skill)
+    applicants = models.ManyToManyField(Intern)
     job_name = models.CharField(max_length=30)
     job_description = models.CharField(max_length=300)
     posting_date = models.DateField()
 
     def __unicode__(self):
         return self.job_name
-
-
-class JobSkill(models.Model):
-    skill = models.ForeignKey(Skill)
-    job = models.ForeignKey(Job)
-
-    def __unicode__(self):
-        return "{0} - {1}".format(str(self.job), str(self.skill))
-
-
-class InternSkill(models.Model):
-    skill = models.ForeignKey(Skill)
-    intern = models.ForeignKey(Intern)
-
-    def __unicode__(self):
-        return "{0} - {1}".format(str(self.intern), str(self.skill))

@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> Login </title>
-</head>
-<body>
+
+{% extends 'base.html' %}
+
+{% block title %} Login
+{% endblock %}
+
+
+{% block body_block %}
     <h1> Login to Internship Finder</h1>
 
     <form id="login_form" method="post" action="/login/">
@@ -15,6 +17,4 @@
 
         <input type="submit" value="submit" />
     </form>
-
-</body>
-</html>
+{% endblock %}

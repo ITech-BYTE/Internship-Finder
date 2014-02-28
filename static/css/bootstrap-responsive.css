@@ -801,14 +801,16 @@
 
 @media (max-width: 767px) {
   body {
-    padding-right: 20px;
-    padding-left: 20px;
+    /*padding-right: 20px;
+    padding-left: 20px;*/
   }
   .navbar-fixed-top,
   .navbar-fixed-bottom,
   .navbar-static-top {
     margin-right: -20px;
     margin-left: -20px;
+      padding-left: 25px;
+      padding-right: 25px;
   }
   .container-fluid {
     padding: 0;
@@ -898,6 +900,7 @@
 }
 
 @media (max-width: 480px) {
+
   .nav-collapse {
     -webkit-transform: translate3d(0, 0, 0);
   }
@@ -947,6 +950,8 @@
   .carousel-caption {
     position: static;
   }
+
+
 }
 
 @media (max-width: 979px) {

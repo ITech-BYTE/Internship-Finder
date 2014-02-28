@@ -1,0 +1,9 @@
+<ul class="nav nav-list">
+    {% if job_list %}
+	    {% for job in job_list %}
+		    <li><a href="/intern/offer/{{ job.id }}">{{ job.job_name }}</a></li>
+		{% endfor %}
+	{% else %}
+        <li>No jobs found.</li>
+	{% endif %}
+</ul>

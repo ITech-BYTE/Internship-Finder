@@ -1,13 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title> Internship </title>
-</head>
-<body>
-    <h1> Internship Details </h1>
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Internship Details
+{% endblock %}
+
+
+{% block body_block %}
 
     <!-- Check if internship exists and show details -->
     {% if internship %}
+        {% if just_applied %}
+            <h1> You have successfully applied for this internship. </h1>
+            <hr/>
+        {% endif %}
+
+
+        <h1> Internship Details </h1>
         <h2> Name: {{ internship.job_name }}</h2>
         <h3> by {{ company.company_name }}</h3>
         <h3> Description: </h3>
@@ -16,25 +25,32 @@
 
         <!-- Print required skill list if there is any -->
         {% if skills %}
-        <ul>
-            {% for jobskill in skills %}
-            <li> {{ jobskill.skill }}</li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {% for skill in skills %}
+                    <li> {{ skill }}</li>
+                {% endfor %}
+            </ul>
 
-        <!-- Print no skills required if the skills list is empty -->
+            <!-- Print no skills required if the skills list is empty -->
         {% else %}
             <p> No skills required.</p>
         {%  endif %}
 
         <!-- Show apply link if the user is logged in as an intern -->
         {% if is_intern %}
-            <p> Apply </p>
+            {% if has_applied %}
+                <p> You have already applied for this internship. </p>
+            {% else %}
+                <form action="/intern/offer/{{ internship.id }}/" method="post">
+                    {% csrf_token %}
+
+                    <input type="submit" onclick="return confirm('Are u sure you want to apply?')" value="Apply" />
+                </form>
+            {% endif %}
         {% endif %}
 
-    <!-- Notify the user if the internship does not exit -->
+        <!-- Notify the user if the internship does not exit -->
     {% else %}
         <p> Internship missing </p>
     {% endif %}
-</body>
-</html>
+{% endblock %}
