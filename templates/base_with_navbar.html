@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Internship Finder Home {% endblock %}
+
+{% block body_block %}
+
+
+<div class="well sidebar-nav col-lg-3 pull-left" style="min-height: 800px;">
+{% if user_type == 0 %}
+    {% include 'navbar_unregistered.html' %}
+{% elif user_type == 1 %}
+    {% include 'navbar_company.html' %}
+{% elif user_type == 2 %}
+    {% include 'navbar_intern.html' %}
+{% endif %}
+</div>
+
+
+<div class="well sidebar-nav col-lg-9 pull-right" style="min-height: 800px; padding-left: 20px;">
+{% block content_block %} Something is wrong :( {% endblock %}
+</div>
+
+{% endblock %}

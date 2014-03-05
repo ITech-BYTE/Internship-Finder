@@ -1,27 +1,27 @@
 
-{% extends 'base.html' %}
+{% extends 'base_with_navbar.html' %}
 
 {% block title %}
     Internship Details
 {% endblock %}
 
 
-{% block body_block %}
+{% block content_block %}
 
     <!-- Check if internship exists and show details -->
     {% if internship %}
         {% if just_applied %}
-            <h1> You have successfully applied for this internship. </h1>
+            <h2> You have successfully applied for this internship. </h2>
             <hr/>
         {% endif %}
 
 
-        <h1> Internship Details </h1>
-        <h2> Name: {{ internship.job_name }}</h2>
-        <h3> by {{ company.company_name }}</h3>
-        <h3> Description: </h3>
+        <h2> Internship Details </h2>
+        <h3> {{ internship.job_name }}</h3>
+        <p><label> Company: {{ company.company_name }}</label></p>
+        <label> Description: </label>
         <p> {{ internship.job_description }}</p>
-        <h3> Required skills: </h3>
+        <label> Required skills: </label>
 
         <!-- Print required skill list if there is any -->
         {% if skills %}
@@ -37,7 +37,7 @@
         {%  endif %}
 
         <!-- Show apply link if the user is logged in as an intern -->
-        {% if is_intern %}
+        {% if user_type == 2 %}
             {% if has_applied %}
                 <p> You have already applied for this internship. </p>
             {% else %}
@@ -48,6 +48,11 @@
                 </form>
             {% endif %}
         {% endif %}
+
+        <hr/>
+
+        <h2> People also applied for: </h2>
+        {% include 'joblist.html' with job_list=recommendations %}
 
         <!-- Notify the user if the internship does not exit -->
     {% else %}

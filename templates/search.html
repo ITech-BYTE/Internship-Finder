@@ -1,23 +1,23 @@
 
-{% extends 'base.html' %}
+{% extends 'base_with_navbar.html' %}
 
 {% block title %}
     Search Internship
 {% endblock %}
 
 
-{% block body_block %}
+{% block content_block %}
     <ul class="nav nav-list">
         <h1> Search for internships! </h1>
         <form>
             <label></label>
-            <li><input  class="search-query span10" type="text" name="suggestion" value="" id="suggestion" /></li>
+            <li><input  class="form-control span3" type="text" name="suggestion" value="" id="suggestion" /></li>
         </form>
     </ul>
 
-
+    <hr/>
     <div id="job_area">
-        <p> Please search for the job name above. </p>
+        <label> Please search for the job name above. </label>
     </div>
 
 {% endblock %}

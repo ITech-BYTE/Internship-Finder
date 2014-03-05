@@ -1,31 +1,56 @@
-
-{% extends 'base.html' %}
+{% extends 'base_with_navbar.html' %}
 
 {% block title %}
-Register with Internship Finder
+    Register with InternFinder
 {% endblock %}
 
-{% block body_block %}
+{% block content_block %}
+    {% if user.is_authenticated %}
+        <h3> You are already registered. </h3>
+    {% else %}
         <h1>Register with Internship Finder</h1>
 
         {% if registered %}
-        <strong>Thank you for registering!</strong>
+            <strong>Thank you for registering!</strong>
+            <p>
+            <a href="/login/"> You can now log in here</a>
+            </p>
         {% else %}
-        <strong>Register here!</strong><br />
 
-        <form id="user_form" method="post" action="{{ action }}"
-                enctype="multipart/form-data">
+            <form class="form-signin span8" role="form" id="user_form" method="post" action="{{ action }}"
+                  enctype="multipart/form-data">
 
-            {% csrf_token %}
+                {% csrf_token %}
 
-            <!-- Display each form. The as_p method wraps each element in a paragraph
-                 (<p>) element. This ensures each element appears on a new line,
-                 making everything look neater. -->
-            {{ user_form.as_p }}
-            {{ profile_form.as_p }}
+                <!-- Display each form. The as_p method wraps each element in a paragraph
+                     (<p>) element. This ensures each element appears on a new line,
+                     making everything look neater. -->
 
-            <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Register" />
-        </form>
+                {% for field in user_form.visible_fields %}
+
+                    {{ field.errors }}
+                    <label>{{ field.help_text}}</label><br/>
+                    <div class="form-group">{{ field }}</div><br/>
+                {% endfor %}
+
+                <label>{{ profile_form.dob.help_text }}<br/></label>
+                <div class="form-inline">
+                    {{ profile_form.dob.errors }}
+                    {{ profile_form.dob }}
+                </div>
+
+
+                <hr/>
+                {{ profile_form.skills.error_messages }}
+                <label>{{ profile_form.skills.help_text }}</label>
+                <div class="panel panel-default">
+                    <div class="panel-body" id="reglist">
+                        {{ profile_form.skills }}
+                    </div></div>
+                <!-- Provide a button to click to submit the form. -->
+                <input type="submit" name="submit" value="Register" />
+            </form>
         {% endif %}
- {% endblock %}
+    {% endif %}
+    </div>
+{% endblock %}

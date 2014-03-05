@@ -1,0 +1,17 @@
+
+{% extends 'base_with_navbar.html' %}
+
+{% block title %}
+    Internship Details
+{% endblock %}
+
+
+{% block content_block %}
+
+    <h3> {{ message }}</h3>
+
+    {% if not is_company %}
+        {% include 'joblist.html' with job_list=job_list %}
+    {% endif %}
+
+{% endblock %}

@@ -1,24 +1,18 @@
 from django.conf.urls import patterns, include, url
 from ifinder_main.views import user_login, user_logout, home, profile, search, suggest_job
 
-# Uncomment the next two lines to enable the admin:
+
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^ifinder/', include('ifinder.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    url(r'^$', home, name='home'),
-    url(r'^login/$', user_login, name='login'),
-    url(r'^logout/$', user_logout, name='logout'),
-    url(r'^profile/$', profile, name='profile'),
-    url(r'^search/$', search, name='search'),
-    url(r'^suggest_job/$', suggest_job, name='suggest'),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^intern/', include('ifinder_main.urls_intern')),
-    url(r'^company/', include('ifinder_main.urls_company')),
+    url(r'^$', home, name='home'),                              # Homepage
+    url(r'^login/$', user_login, name='login'),                 # Login page
+    url(r'^logout/$', user_logout, name='logout'),              # Url to call logout function (redirected to homepage after logout)
+    url(r'^profile/$', profile, name='profile'),                # Profile page (for both interns and companies, depending in logged in user)
+    url(r'^search/$', search, name='search'),                   # Search page
+    url(r'^suggest_job/$', suggest_job, name='suggest'),        # Search result set embedded in search page
+    url(r'^admin/', include(admin.site.urls)),                  # Admin page
+    url(r'^intern/', include('ifinder_main.urls_intern')),      # Urls that start with /intern/
+    url(r'^company/', include('ifinder_main.urls_company')),    # Urls that start with /company/
 )

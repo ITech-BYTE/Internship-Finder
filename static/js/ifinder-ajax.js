@@ -8,4 +8,11 @@ $(document).ready(function() {
         });
     });
 
+    $('#reglist').slimScroll({
+        color: '#00f',
+        size: '10px',
+        height: '100px',
+        alwaysVisible: true
+    });
 });
+

@@ -32,9 +32,9 @@ class Recruiter(UserProfile):
 
 
 class Job(models.Model):
-    company = models.ForeignKey(Recruiter)
+    company = models.ForeignKey(Recruiter, related_name='offers')
     skills = models.ManyToManyField(Skill)
-    applicants = models.ManyToManyField(Intern)
+    applicants = models.ManyToManyField(Intern, related_name='applications')
     job_name = models.CharField(max_length=30)
     job_description = models.CharField(max_length=300)
     posting_date = models.DateField()

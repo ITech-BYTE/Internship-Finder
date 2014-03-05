@@ -1,20 +1,20 @@
 
-{% extends 'base.html' %}
+{% extends 'base_with_navbar.html' %}
 
 {% block title %}
-Your personal profile
+    Your personal profile
 {% endblock %}
 
-{% block body_block %}
-        <h1>Profile page</h1>
+{% block content_block %}
+    <h1>Profile page</h1>
 
-        {% if registered %}
+    {% if registered %}
         <strong>Successfully changed your data. </strong>
-        {% else %}
+    {% else %}
         <strong>You can see and change your data here!</strong><br />
 
         <form id="user_form" method="post" action="/profile/"
-                enctype="multipart/form-data">
+              enctype="multipart/form-data">
 
             {% csrf_token %}
 
@@ -27,5 +27,5 @@ Your personal profile
             <!-- Provide a button to click to submit the form. -->
             <input type="submit" name="submit" value="Save changes" />
         </form>
-        {% endif %}
- {% endblock %}
+    {% endif %}
+{% endblock %}

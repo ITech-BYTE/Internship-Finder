@@ -3,25 +3,68 @@
 {% block title %} Home {% endblock %}
 
 {% block body_block %}
-    <h1> Our top offers </h1>
-    {% if top_offers %}
-        <ul>
-            {% for offer in top_offers %}
-            <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a>- Application count: {{ offer.applicant_count }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p> We don't have any top offers :( </p>
-    {% endif %}
+    <div class="container well">
 
-    <h1> Our latest offers </h1>
-    {% if latest_offers %}
-        <ul>
-            {% for offer in latest_offers %}
-            <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a> - {{ offer.posting_date }}</li>
-            {% endfor %}
+        <ul class="nav nav-list">
+            <h1> Search for internships! </h1>
+            <form id="search_form" method="get" action="/suggest_job/">
+                <label></label>
+                <li><input class="form-control span3" type="text" name="suggestion" value="" id="suggestion" /></li>
+                <li><input class="btn btn-default" type="submit" value="submit" /></li>
+            </form>
         </ul>
-    {% else %}
-        <p> We don't have any latest offers :( </p>
-    {% endif %}
+
+        <hr/>
+
+        <div class="row-fluid">
+            <div class="panel panel-default span5">
+                <div class="panel-title text-center"><h3>Intern registration</h3></div>
+                <div class="panel-body text-center">
+                    <a href="/intern/register/">Click here</a>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default span5">
+                <div class="panel-title text-center"><h3>Company registration</h3></div>
+                <div class="panel-body text-center">
+                    <a href="/company/register/">Click here</a>
+                </div>
+            </div>
+        </div>
+        <hr/>
+
+        <div class="row-fluid">
+            <div class="panel panel-default span5">
+                <div class="panel-title text-center"><h3>Our top offers</h3></div>
+                <div class="panel-body">
+                    {% if top_offers %}
+                        <ul>
+                            {% for offer in top_offers %}
+                                <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a>- Application count: {{ offer.applicant_count }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p> We don't have any top offers :( </p>
+                    {% endif %}
+                </div>
+            </div>
+
+
+            <div class="panel panel-default span5">
+                <div class="panel-title text-center"><h3>Our latest offers</h3></div>
+                <div class="panel-body">
+                    {% if latest_offers %}
+                        <ul>
+                            {% for offer in latest_offers %}
+                                <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a> - {{ offer.posting_date }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p> We don't have any latest offers :( </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

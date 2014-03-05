@@ -1,0 +1,22 @@
+{% extends 'base_with_navbar.html' %}
+
+{% block title %}
+    Intern Details
+{% endblock %}
+
+
+{% block content_block %}
+    <h2> Intern details </h2>
+    <ul>
+    <li> First Name: {{ intern.user.first_name }}</li>
+    <li> Last Name: {{ intern.user.last_name }}</li>
+    <li> DOB: {{ intern.dob }}</li>
+    <li> Contact email: {{ intern.user.email }}</li>
+
+    <h3>Skills</h3>
+    {% for skill in intern.skills.all %}
+        <li> {{ skill }}</li>
+    {% endfor %}
+
+    </ul>
+{% endblock %}
