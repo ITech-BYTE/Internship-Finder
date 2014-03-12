@@ -1,0 +1,29 @@
+
+{% extends 'base_with_navbar.html' %}
+
+{% block title %}
+    Jobs Posted
+{% endblock %}
+
+
+{% block content_block %}
+
+    <h3> Following Jobs Have been Posted By You! Click to see list of Interns who applied: </h3>
+
+        <ul class="nav nav-list">
+            {% if job_list %}
+	              {% for job in job_list %}
+		              <li>{{ job.job_name }}
+                          <a href="/company/applicants/{{ job.id }}"> View Job Applicants</a>
+                            <a href="/company/offer/{{ job.id }}"> Edit Job</a>
+
+                      </li>
+
+		          {% endfor %}
+            {% else %}
+              <li>No jobs Posted By You.</li>
+        	{% endif %}
+
+        </ul>
+
+{% endblock %}

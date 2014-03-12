@@ -9,9 +9,9 @@
 {% if user_type == 0 %}
     {% include 'navbar_unregistered.html' %}
 {% elif user_type == 1 %}
-    {% include 'navbar_company.html' %}
+    {% include 'company/navbar_company.html' %}
 {% elif user_type == 2 %}
-    {% include 'navbar_intern.html' %}
+    {% include 'intern/navbar_intern.html' %}
 {% endif %}
 </div>
 

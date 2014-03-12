@@ -37,7 +37,7 @@ class Job(models.Model):
     applicants = models.ManyToManyField(Intern, related_name='applications')
     job_name = models.CharField(max_length=30)
     job_description = models.CharField(max_length=300)
-    posting_date = models.DateField()
+    posting_date = models.DateField(auto_now_add= True)
 
     def __unicode__(self):
         return self.job_name

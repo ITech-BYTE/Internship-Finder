@@ -1,0 +1,27 @@
+
+{% extends 'base_with_navbar.html' %}
+
+{% block title %}
+    Applicants List
+{% endblock %}
+
+
+{% block content_block %}
+
+    <h3> {{ message }}</h3>
+
+    {% if is_company %}
+
+                <ul class="nav nav-list">
+                    {% if intern_list %}
+	                  {% for intern in intern_list %}
+		                    <li><a href="/intern/id/{{ intern.id }}">{{ intern.user.first_name }} {{ intern.user.last_name }}</a></li>
+	                  {% endfor %}
+	                {% else %}
+                         <li>No Applicants Found.</li>
+	                {% endif %}
+                </ul>
+
+    {% endif %}
+
+{% endblock %}

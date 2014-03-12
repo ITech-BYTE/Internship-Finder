@@ -9,7 +9,7 @@ from ifinder_main.utilities import get_recommended, get_also_applied_for, get_us
 
 # INTERN REGISTRATION
 def register_intern(request):
-    return register(request, 0)
+    return register(request, 1)
 
 # APPLICATIONS
 @login_required
@@ -34,7 +34,7 @@ def my_applications(request):
     context_dict['message'] = message
     context_dict['user_type'] = get_user_type(request.user)
 
-    return render_to_response("intern_jobs.html", context_dict, context)
+    return render_to_response("intern/intern_jobs.html", context_dict, context)
 
 # RECOMMENDED INTERNSHIPS
 # Based on the skill set of the intern and the skills required by the internship
@@ -60,7 +60,7 @@ def my_recommended(request):
     context_dict['message'] = message
     context_dict['user_type'] = get_user_type(request.user)
 
-    return render_to_response("intern_jobs.html", context_dict, context)
+    return render_to_response("intern/intern_jobs.html", context_dict, context)
 
 @login_required()
 def intern_details(request, intern_id):
@@ -77,7 +77,7 @@ def intern_details(request, intern_id):
         company = Recruiter.objects.get(user=request.user)
 
         if get_is_applicant_of(intern=intern, recruiter=company):
-            return render_to_response('intern_details.html', {'intern': intern, 'user_type': 1 }, context)
+            return render_to_response('intern/intern_details.html', {'intern': intern, 'user_type': 1 }, context)
 
     return render_to_response('error.html', {'error': "You are not authorised to view this page."}, context)
 
@@ -142,4 +142,4 @@ def internship_details(request, internship_id):
     except Job.DoesNotExist:
         pass
 
-    return render_to_response('offer.html', context_dict, context)
+    return render_to_response('intern/offer.html', context_dict, context)

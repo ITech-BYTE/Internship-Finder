@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.db.models import Count
-from ifinder_main.forms import UserForm, InternForm, CompanyForm, CompanyEditForm, UserEditForm
+from ifinder_main.forms import UserForm, InternForm, CompanyForm, UserEditForm
 from ifinder_main.models import Job, Recruiter, Intern
 from ifinder_main.utilities import get_job_list, get_user_type
 
@@ -40,16 +40,16 @@ def user_logout(request):
 
 
 # GENERAL REGISTRATION METHOD (interns: user_type=0, companies: user_type=1)
-def register(request, user_type):
+def register(request, reg_type):
     context = RequestContext(request)
 
     # A boolean value for telling the template whether the registration was successful.
     registered = False
 
     # The action that will be passed to the template and that will be called when the user submits the form
-    if user_type == 0:
+    if reg_type == 1:
             action = "/intern/register/"
-    elif user_type == 1:
+    elif reg_type == 0:
             action = "/company/register/"
 
     # If it's a HTTP POST, we're interested in processing form data.
@@ -59,9 +59,9 @@ def register(request, user_type):
         user_form = UserForm(data=request.POST)
 
         # Get information from the form depending on the registration type
-        if user_type == 0:
+        if reg_type == 1:
             profile_form = InternForm(data=request.POST)
-        elif user_type == 1:
+        elif reg_type == 0:
             profile_form = CompanyForm(data=request.POST)
 
         # If the two forms are valid...
@@ -82,16 +82,16 @@ def register(request, user_type):
 
             # Set the user profile's is_industrial variable to that we can decide later whether this profile
             # belongs to an intern or a company
-            if user_type == 0:
+            if reg_type == 1:
                 profile.is_industrial = False
-            elif user_type == 1:
+            elif reg_type == 0:
                 profile.is_industrial = True
 
             # Now we save the UserProfile model instance.
             profile.save()
 
             # If it is an intern registration, also save skills
-            if user_type == 0:
+            if reg_type == 1:
                 profile_form.save_m2m()
 
             # Update our variable to tell the template registration was successful.
@@ -107,15 +107,15 @@ def register(request, user_type):
     # These forms will be blank, ready for user input.
     else:
         user_form = UserForm()
-        if user_type == 0:
+        if reg_type == 1:
             profile_form = InternForm()
-        elif user_type == 1:
+        elif reg_type == 0:
             profile_form = CompanyForm()
 
     # Render the template depending on the context.
     return render_to_response(
         'register.html',
-            {'user_form': user_form, 'profile_form': profile_form, 'registered': registered, 'action' : action, 'user_type': 0},
+            {'is_reg': True, 'reg_type': reg_type,'user_form': user_form, 'profile_form': profile_form, 'registered': registered, 'action' : action, 'user_type': 0},
             context)
 
 # LOGIN
@@ -160,6 +160,8 @@ def profile(request):
     # A boolean value for telling the template whether the changes were successful.
     valid_change = False
 
+    action = "/profile/"
+
 
     try:
         # Try to find the profile in interns
@@ -183,7 +185,7 @@ def profile(request):
         user_form = UserEditForm(data=request.POST, instance=request.user)
 
         if current_user_profile.is_industrial:
-            profile_form = CompanyEditForm(data=request.POST, instance=current_user_profile)
+            profile_form = CompanyForm(data=request.POST, instance=current_user_profile)
         else:
             profile_form = InternForm(data=request.POST, instance=current_user_profile)
 
@@ -214,15 +216,17 @@ def profile(request):
     else:
         user_form = UserEditForm(instance=request.user)
         if current_user_profile.is_industrial:
-            profile_form = CompanyEditForm(instance=current_user_profile)
+            profile_form = CompanyForm(instance=current_user_profile)
         else:
             profile_form = InternForm(instance=current_user_profile)
 
     # Render the template depending on the context.
     user_type = get_user_type(request.user)
+    reg_type = user_type - 1
     return render_to_response(
-        'profile.html',
-            {'user_form': user_form, 'profile_form': profile_form, 'registered': valid_change, 'user_type': user_type},
+        'register.html',
+            {'is_reg': False, 'reg_type': reg_type,'user_form': user_form, 'profile_form': profile_form, 'registered': valid_change,
+             'action' : action, 'user_type': user_type},
             context)
 
 

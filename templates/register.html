@@ -5,19 +5,29 @@
 {% endblock %}
 
 {% block content_block %}
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated and is_reg %}
         <h3> You are already registered. </h3>
     {% else %}
-        <h1>Register with Internship Finder</h1>
+        {% if is_reg %}
+            <h1>Register with Internship Finder</h1>
+        {% else %}
+            <h1>Edit your profile here!</h1><br />
+        {% endif %}
 
         {% if registered %}
-            <strong>Thank you for registering!</strong>
-            <p>
-            <a href="/login/"> You can now log in here</a>
-            </p>
+            {% if user_type == 0 %}
+                <strong>Thank you for registering!</strong>
+                <p>
+                    <a href="/login/"> You can now log in here</a>
+                </p>
+            {% else %}
+                <strong>Successfully changed your data. </strong>
+
+
+            {% endif %}
         {% else %}
 
-            <form class="form-signin span8" role="form" id="user_form" method="post" action="{{ action }}"
+            <form class="form-signin span4" role="form" id="user_form" method="post" action="{{ action }}"
                   enctype="multipart/form-data">
 
                 {% csrf_token %}
@@ -33,22 +43,34 @@
                     <div class="form-group">{{ field }}</div><br/>
                 {% endfor %}
 
-                <label>{{ profile_form.dob.help_text }}<br/></label>
-                <div class="form-inline">
-                    {{ profile_form.dob.errors }}
-                    {{ profile_form.dob }}
-                </div>
+
+                {% if reg_type == 1 %}
+                    <label>{{ profile_form.dob.help_text }}<br/></label>
+                    <div class="form-inline">
+                        {{ profile_form.dob.errors }}
+                        {{ profile_form.dob }}
+                    </div>
 
 
-                <hr/>
-                {{ profile_form.skills.error_messages }}
-                <label>{{ profile_form.skills.help_text }}</label>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="reglist">
-                        {{ profile_form.skills }}
-                    </div></div>
+                    <hr/>
+                    {{ profile_form.skills.error_messages }}
+                    <label>{{ profile_form.skills.help_text }}</label>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="reglist">
+                            {{ profile_form.skills }}
+                        </div></div>
+
+                {% else %}
+                    {% for field in profile_form.visible_fields %}
+
+                        {{ field.errors }}
+                        <label>{{ field.help_text}}</label><br/>
+                        <div class="form-group">{{ field }}</div><br/>
+                    {% endfor %}
+                {% endif %}
+
                 <!-- Provide a button to click to submit the form. -->
-                <input type="submit" name="submit" value="Register" />
+                <input class="btn btn-primary" type="submit" name="submit" value="Register" />
             </form>
         {% endif %}
     {% endif %}
