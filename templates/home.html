@@ -39,11 +39,14 @@
                 <div class="panel-title text-center"><h3>Our top offers</h3></div>
                 <div class="panel-body">
                     {% if top_offers %}
-                        <ul>
+                        <table class="table table-striped">
                             {% for offer in top_offers %}
-                                <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a>- Application count: {{ offer.applicant_count }}</li>
+                                <tr>
+                                    <td> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a></td>
+                                    <td>Application count: {{ offer.applicant_count }}</td>
+                                </tr>
                             {% endfor %}
-                        </ul>
+                        </table>
                     {% else %}
                         <p> We don't have any top offers :( </p>
                     {% endif %}
@@ -55,11 +58,15 @@
                 <div class="panel-title text-center"><h3>Our latest offers</h3></div>
                 <div class="panel-body">
                     {% if latest_offers %}
-                        <ul>
+                        <table class="table table-striped">
                             {% for offer in latest_offers %}
-                                <li> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a> - {{ offer.posting_date }}</li>
+                                <tr>
+                                    <td> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a></td>
+                                    <td>{{ offer.posting_date }}</td>
+                                </tr>
                             {% endfor %}
-                        </ul>
+
+                        </table>
                     {% else %}
                         <p> We don't have any latest offers :( </p>
                     {% endif %}
