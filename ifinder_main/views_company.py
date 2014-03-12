@@ -6,7 +6,6 @@ from ifinder_main.forms import InternshipForm
 from ifinder_main.models import Job, Recruiter, Intern, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
-import datetime
 
 
 # COMPANY REGISTRATION

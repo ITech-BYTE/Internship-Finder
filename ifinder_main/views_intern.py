@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from ifinder_main.models import Job, Intern, UserProfile, Recruiter
+from ifinder_main.models import Job, Intern, UserProfile, Recruiter, Application
 from ifinder_main.views import register
 from ifinder_main.utilities import get_recommended, get_also_applied_for, get_user_type, get_is_applicant_of
 
@@ -106,7 +106,7 @@ def internship_details(request, internship_id):
 
         if request.method == 'POST':
             # If it's a POST request, add the application to the DB
-            internship.applicants.add(Intern.objects.get(user=request.user))
+            Application.objects.get_or_create(intern=Intern.objects.get(user=request.user), job=internship, accepted=False)
             just_applied = True
             has_applied = True      # Let the template know that the user has already applied for the internship
         else:

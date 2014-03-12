@@ -141,7 +141,7 @@ def add_int_skills(skill, Internuser):
     Internuser.skills.add(skill)
 
 def add_job_application(applicant, job):
-    job.applicants.add(applicant)
+    Application.objects.get_or_create(job=job, intern=applicant,accepted=False)
 
 
 
@@ -151,6 +151,6 @@ def add_job_application(applicant, job):
 if __name__ == '__main__':
     print "Starting Intern Finder population script..."
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ifinder.settings')
-    from ifinder_main.models import Intern, Recruiter, Skill, Job
+    from ifinder_main.models import Intern, Recruiter, Skill, Job, Application
     from django.contrib.auth.models import User
     populate()
