@@ -10,19 +10,32 @@
         <h3> You are already logged in. </h3>
         <a href="/">go back to the homepage </a>
     {% else %}
+        <div class="col-sm-offset-1 col-sm-10">
         <h1> Login to Internship Finder</h1>
+        <hr>
+        </div>
 
-        <form id="login_form" method="post" action="/login/">
+        <form class="form-horizontal" id="login_form" method="post" action="/login/">
             {% csrf_token %}
+
             <div class="form-group">
-            <label>Username:</label><input class="form-control" type="text" name="username" value="" size="50" />
+                <label class="control-label col-sm-2">Username</label>
+                <div class="col-sm-5">
+                    <input class="form-control" type="text" name="username" value="" size="50" />
+                </div>
             </div>
 
             <div class="form-group">
-            <label>Password:</label> <input class="form-control" type="password" name="password" value="" size="50" />
+                <label class="control-label col-sm-2">Password</label>
+                <div class="col-sm-5">
+                    <input class="form-control" type="password" name="password" value="" size="50" />
+                </div>
             </div>
-
-            <input class="btn btn-default" type="submit" value="submit" />
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-default" type="submit" value="Submit" />
+            </div>
+            </div>
         </form>
     {% endif %}
 {% endblock %}

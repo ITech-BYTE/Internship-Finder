@@ -3,51 +3,56 @@
 {% block title %} Internship Profile {% endblock %}
 
 {% block content_block %}
-    {% if id == 0 %}
-        <h1>Add a new internship here!</h1>
-    {% else %}
-        <h1>Edit your internship here!</h1><br />
-    {% endif %}
 
-    {% if added %}
+    <div class="span7">
         {% if id == 0 %}
-            <strong>Thank you for posting!</strong>
+            <h1>Add a new internship here!</h1>
         {% else %}
-            <strong>Successfully changed your data. </strong>
+            <h1>Edit your internship here!</h1><br />
         {% endif %}
+    </div>
 
-    {% else %}
-
-        <form class="form-signin span4" role="form" id="user_form" method="post" action="{{ action }}"
-              enctype="multipart/form-data">
-
-            {% csrf_token %}
-
-            <label>{{ job_form.job_name.help_text }}<br/></label>
-            <div class="form-inline">
-                {{ job_form.job_name.errors }}
-                {{ job_form.job_name }}
+        {% if added %}
+            <div class="span7">
+            {% if id == 0 %}
+                <strong>Thank you for posting!</strong>
+            {% else %}
+                <strong>Successfully changed your data. </strong>
+            {% endif %}
             </div>
 
-            <label>{{ job_form.job_description.help_text }}<br/></label>
-            <div class="form-inline">
-                {{ job_form.job_description.errors }}
-                {{ job_form.job_description }}
-            </div>
+        {% else %}
+
+            <form class="form-signin span4" role="form" id="user_form" method="post" action="{{ action }}"
+                  enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <label>{{ job_form.job_name.help_text }}<br/></label>
+                <div class="form-inline">
+                    {{ job_form.job_name.errors }}
+                    {{ job_form.job_name }}
+                </div>
+
+                <label>{{ job_form.job_description.help_text }}<br/></label>
+                <div class="form-inline">
+                    {{ job_form.job_description.errors }}
+                    {{ job_form.job_description }}
+                </div>
 
 
-            <hr/>
-            {{ job_form.skills.error_messages }}
-            <label>{{ job_form.skills.help_text }}</label>
-            <div class="panel panel-default">
-                <div class="panel-body" id="reglist">
-                    {{ job_form.skills }}
-                </div></div>
+                <hr/>
+                {{ job_form.skills.error_messages }}
+                <label>{{ job_form.skills.help_text }}</label>
+                <div class="panel panel-default span5">
+                    <div class="panel-body" id="reglist">
+                        {{ job_form.skills }}
+                    </div></div>
 
-
-            <!-- Provide a button to click to submit the form. -->
-            <input class="btn btn-primary" type="submit" name="submit" value="Post" />
-        </form>
-    {% endif %}
+                <hr>
+                <!-- Provide a button to click to submit the form. -->
+                <input class="btn btn-primary" type="submit" name="submit" value="Post" />
+            </form>
+        {% endif %}
     </div>
 {% endblock %}

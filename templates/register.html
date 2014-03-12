@@ -17,8 +17,9 @@
         {% if registered %}
             {% if user_type == 0 %}
                 <strong>Thank you for registering!</strong>
-                <p>
-                    <a href="/login/"> You can now log in here</a>
+                <hr>
+                <p>You can now log in
+                    <a href="/login/" class="btn btn-primary"> Log in</a>
                 </p>
             {% else %}
                 <strong>Successfully changed your data. </strong>

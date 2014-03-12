@@ -46,8 +46,8 @@ class CompanyForm(forms.ModelForm):
 
 
 class InternshipForm(forms.ModelForm):
-    job_name = forms.CharField(max_length=200, help_text="Please enter the name of your internship.", widget=forms.TextInput(attrs={'class':'form-control'}))
-    job_description = forms.CharField(help_text="Please enter the description.", widget=forms.Textarea(attrs={'class': 'form-control'}))
+    job_name = forms.CharField(max_length=200, help_text="Please enter the name of your internship.", widget=forms.TextInput(attrs={'class':'form-control', 'size': 68}))
+    job_description = forms.CharField(help_text="Please enter the description.", widget=forms.Textarea(attrs={'class': 'form-control','cols' : '70'}))
     skills = forms.ModelMultipleChoiceField(help_text="Please select the skills desired for this position.", queryset=Skill.objects.all(), widget=forms.CheckboxSelectMultiple())
 
     class Meta:

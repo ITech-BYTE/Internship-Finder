@@ -14,12 +14,19 @@
 
         <ul class="nav nav-list">
             {% if applications %}
+                <table class="table table-striped">
                 {% for app in applications %}
-                    <li><a href="/intern/id/{{ app.intern.id }}">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></li>
-                    {% if app.accepted %} <b>Already accepted</b>
-                    {% else %} <a href="#">Accept this intern</a>
-                    {% endif %}
-                {% endfor %}
+                    <tr>
+                        <td><a href="/intern/id/{{ app.intern.id }}" class="btn">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></td>
+                        {% if app.accepted %}
+                            <td><b>Already accepted</b></td>
+                        {% else %}
+                            <td><a href="#" class="btn btn-primary">Accept this intern</a></td>
+                        {% endif %}
+
+                    </tr>
+                {% endfor%}
+                </table>
             {% else %}
                 <li>No Applicants Found.</li>
             {% endif %}

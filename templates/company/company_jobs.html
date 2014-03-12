@@ -8,18 +8,21 @@
 
 {% block content_block %}
 
-    <h3> Following Jobs Have been Posted By You! Click to see list of Interns who applied: </h3>
+    <h3>Your internships!</h3>
 
         <ul class="nav nav-list">
             {% if job_list %}
+                <table class="table table-striped">
 	              {% for job in job_list %}
-		              <li>{{ job.job_name }}
-                          <a href="/company/applicants/{{ job.id }}"> View Job Applicants</a>
-                            <a href="/company/offer/{{ job.id }}"> Edit Job</a>
+		              <tr>
+                          <td>{{ job.job_name }}</td>
+                          <td><a href="/company/applicants/{{ job.id }}"> View Job Applicants</a></td>
+                          <td><a href="/company/offer/{{ job.id }}"> Edit Job</a></td>
 
-                      </li>
+                      </tr>
 
 		          {% endfor %}
+                </table>
             {% else %}
               <li>No jobs Posted By You.</li>
         	{% endif %}

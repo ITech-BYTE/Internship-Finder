@@ -10,51 +10,71 @@
 
     <!-- Check if internship exists and show details -->
     {% if internship %}
-        {% if just_applied %}
-            <h2> You have successfully applied for this internship. </h2>
-            <hr/>
-        {% endif %}
-
-
-        <h2> Internship Details </h2>
-        <h3> {{ internship.job_name }}</h3>
-        <p><label> Company: {{ company.company_name }}</label></p>
-        <label> Description: </label>
-        <p> {{ internship.job_description }}</p>
-        <label> Required skills: </label>
-
-        <!-- Print required skill list if there is any -->
-        {% if skills %}
-            <ul>
-                {% for skill in skills %}
-                    <li> {{ skill }}</li>
-                {% endfor %}
-            </ul>
-
-            <!-- Print no skills required if the skills list is empty -->
-        {% else %}
-            <p> No skills required.</p>
-        {%  endif %}
-
-        <!-- Show apply link if the user is logged in as an intern -->
-        {% if user_type == 2 %}
-            {% if has_applied %}
-                <p> You have already applied for this internship. </p>
-            {% else %}
-                <form action="/intern/offer/{{ internship.id }}/" method="post">
-                    {% csrf_token %}
-
-                    <input type="submit" onclick="return confirm('Are u sure you want to apply?')" value="Apply" />
-                </form>
+        <div class="span7">
+            {% if just_applied %}
+                <h2> You have successfully applied for this internship. </h2>
+                <hr/>
             {% endif %}
-        {% endif %}
 
-        <hr/>
 
-        <h2> People also applied for: </h2>
-        {% include 'joblist.html' with job_list=recommendations %}
+            <h2> Internship Details </h2>
 
-        <!-- Notify the user if the internship does not exit -->
+            <h3> {{ internship.job_name }}</h3>
+
+        </div>
+
+
+        <div class="span7" style="border-style:solid; border-width:2px; border-color: cornflowerblue; padding: 20px; background-color: #ffffff;">
+            <p><h3> Company: {{ company.company_name }}</h3></p>
+
+
+
+            <h4> Description: </h4>
+            <p style="font-size: 16px;"> {{ internship.job_description }}</p>
+            <h4> Required skills: </h4>
+
+            <!-- Print required skill list if there is any -->
+            {% if skills %}
+                <ul>
+                    {% for skill in skills %}
+                        <li> {{ skill }}</li>
+                    {% endfor %}
+                </ul>
+
+                <!-- Print no skills required if the skills list is empty -->
+            {% else %}
+                <p> No skills required.</p>
+            {%  endif %}
+
+        </div>
+
+        <div class="pull-left">
+            <!-- Show apply link if the user is logged in as an intern -->
+            {% if user_type == 2 %}
+                <div class="span7">
+                {% if has_applied %}
+                    <hr>
+                    <p> You have already applied for this internship. </p>
+                {% else %}
+                    <form action="/intern/offer/{{ internship.id }}/" method="post">
+                        {% csrf_token %}
+
+                        <hr>
+                        <input class="btn btn-primary" type="submit" onclick="return confirm('Are u sure you want to apply?')" value="Apply" />
+
+                    </form>
+                {% endif %}
+            {% endif %}
+            </div>
+
+            <hr/>
+
+            <div class="span7">
+                <h2> People also applied for: </h2>
+                {% include 'joblist.html' with job_list=recommendations %}
+            </div>
+            <!-- Notify the user if the internship does not exit -->
+        </div>
     {% else %}
         <p> Internship missing </p>
     {% endif %}
