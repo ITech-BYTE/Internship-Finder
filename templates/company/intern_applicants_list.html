@@ -12,15 +12,18 @@
 
     {% if is_company %}
 
-                <ul class="nav nav-list">
-                    {% if intern_list %}
-	                  {% for intern in intern_list %}
-		                    <li><a href="/intern/id/{{ intern.id }}">{{ intern.user.first_name }} {{ intern.user.last_name }}</a></li>
-	                  {% endfor %}
-	                {% else %}
-                         <li>No Applicants Found.</li>
-	                {% endif %}
-                </ul>
+        <ul class="nav nav-list">
+            {% if applications %}
+                {% for app in applications %}
+                    <li><a href="/intern/id/{{ app.intern.id }}">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></li>
+                    {% if app.accepted %} <b>Already accepted</b>
+                    {% else %} <a href="#">Accept this intern</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <li>No Applicants Found.</li>
+            {% endif %}
+        </ul>
 
     {% endif %}
 

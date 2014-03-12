@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from ifinder_main.utilities import get_user_type
 from ifinder_main.forms import InternshipForm
-from ifinder_main.models import Job, Recruiter, Intern, UserProfile
+from ifinder_main.models import Job, Recruiter, Intern, UserProfile, Application
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 
@@ -66,10 +66,11 @@ def get_applicants(request, internship_id):
     else:
         message = "Interns List"
         job = Job.objects.get(id=internship_id)
-        intern_list = job.applicants.all()  # this gives entire list of interns who applied to a job
+
+        applications = Application.objects.filter(job=job)
 
     context_dict['is_company'] = is_company
-    context_dict['intern_list'] = intern_list
+    context_dict['applications'] = applications
     context_dict['message'] = message
     context_dict['user_type'] = get_user_type(request.user)
 
