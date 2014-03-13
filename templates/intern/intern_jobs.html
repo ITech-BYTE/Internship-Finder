@@ -11,7 +11,24 @@
     <h3> {{ message }}</h3>
 
     {% if not is_company %}
-        {% include 'joblist.html' with job_list=job_list %}
+        <ul class="nav nav-list">
+            {% if job_list %}
+                <table class="table table-striped">
+                    <tr>
+                        <th>Internship</th><th>Company</th><th>Status</th>
+                    </tr>
+                    {% for job in job_list %}
+                        <tr>
+                            <td><a href="/intern/offer/{{ job.job.id }}">{{ job.job.job_name }}</a></td>
+                            <td>{{ job.job.company.company_name }}</td>
+                            <td>{{ job.status }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <li>No jobs found.</li>
+            {% endif %}
+        </ul>
     {% endif %}
 
 {% endblock %}

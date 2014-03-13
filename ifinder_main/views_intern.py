@@ -27,7 +27,10 @@ def my_applications(request):
 
     else:
         message = "You have applied for the following jobs:"
-        job_list = Intern.objects.get(user=request.user).applications.all()
+
+        intern = Intern.objects.get(user=request.user)
+        job_list = Application.objects.filter(intern=intern)
+        #job_list = Intern.objects.get(user=request.user).applications.all()
 
     context_dict['is_company'] = is_company
     context_dict['job_list'] = job_list
@@ -106,7 +109,7 @@ def internship_details(request, internship_id):
 
         if request.method == 'POST':
             # If it's a POST request, add the application to the DB
-            Application.objects.get_or_create(intern=Intern.objects.get(user=request.user), job=internship, accepted=False)
+            Application.objects.get_or_create(intern=Intern.objects.get(user=request.user), job=internship)
             just_applied = True
             has_applied = True      # Let the template know that the user has already applied for the internship
         else:

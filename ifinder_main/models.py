@@ -46,4 +46,4 @@ class Job(models.Model):
 class Application(models.Model):
     job = models.ForeignKey(Job)
     intern = models.ForeignKey(Intern)
-    accepted = models.BooleanField()
+    status = models.CharField(max_length=30, default="Pending")

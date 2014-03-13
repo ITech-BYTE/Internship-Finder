@@ -146,3 +146,42 @@ def process_job(request, internship_id):
         # Render the template depending on the context.
         return render_to_response(
             'company/job_profile.html', {'id' : internship_id, 'job_form': job_form, 'added': added, 'user_type': 1}, context)
+
+@login_required
+def process_application(request, status):
+    context = RequestContext(request)
+
+    if request.method == 'GET':
+        if 'intern_id' in request.GET and 'job_id' in request.GET:
+            try:
+                recruiter = Recruiter.objects.get(user=request.user)
+
+                intern = Intern.objects.get(id=request.GET['intern_id'])
+                job = Job.objects.get(id=request.GET['job_id'])
+
+                application = Application.objects.get(intern=intern,job=job)
+
+                if job.company != recruiter:
+                    return render_to_response('error.html', {'error': "You don't have the permission to accept interns for this job"}, context)
+
+                application.status = status
+                application.save()
+
+                return render_to_response('company/process_application_feedback.html', {'status': status, 'intern': intern, 'user_type': 1}, context)
+
+            except (Intern.DoesNotExist, Job.DoesNotExist, Application.DoesNotExist, Recruiter.DoesNotExist):
+                return render_to_response('error.html', {'error': "Could not process your request"}, context)
+
+        else:
+            return render_to_response('error.html', {'error': "Missing dictionary key"}, context)
+
+    else:
+        return render_to_response('error.html', {'error': "Something is wrong"}, context)
+
+
+def accept_intern(request):
+    return process_application(request=request, status="Accepted")
+
+
+def decline_intern(request):
+    return process_application(request=request, status="Declined")

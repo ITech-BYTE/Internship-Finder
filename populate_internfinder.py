@@ -141,7 +141,7 @@ def add_int_skills(skill, Internuser):
     Internuser.skills.add(skill)
 
 def add_job_application(applicant, job):
-    Application.objects.get_or_create(job=job, intern=applicant,accepted=False)
+    Application.objects.get_or_create(job=job, intern=applicant)
 
 
 
