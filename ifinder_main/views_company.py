@@ -185,3 +185,16 @@ def accept_intern(request):
 
 def decline_intern(request):
     return process_application(request=request, status="Declined")
+
+def company_details(request, company_id):
+    context = RequestContext(request)
+
+    try:
+        company = Recruiter.objects.get(id=company_id)
+
+        user_type = get_user_type(request.user)
+
+        return render_to_response('company/company_details.html', {'company': company, 'user_type': user_type}, context)
+
+    except Recruiter.DoesNotExist:
+        return render_to_response('error.html', {'error': "Company not found"}, context)

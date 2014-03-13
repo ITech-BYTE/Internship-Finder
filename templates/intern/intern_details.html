@@ -6,17 +6,20 @@
 
 
 {% block content_block %}
+    <div class="span7">
     <h2> Intern details </h2>
-    <ul>
-    <li> First Name: {{ intern.user.first_name }}</li>
-    <li> Last Name: {{ intern.user.last_name }}</li>
-    <li> DOB: {{ intern.dob }}</li>
-    <li> Contact email: {{ intern.user.email }}</li>
+    <table class="table">
+    <tr><td>First Name</td><td>{{ intern.user.first_name }}</td></tr>
+    <tr><td>Last Name</td><td>{{ intern.user.last_name }}</td></tr>
+    <tr><td>Date of Birth</td><td>{{ intern.dob }}</td></tr>
+    <tr><td>Contact email</td><td>{{ intern.user.email }}</td></tr>
+    </table>
 
-    <h3>Skills</h3>
+    <label>Skills</label>
+    <ul>
     {% for skill in intern.skills.all %}
         <li> {{ skill }}</li>
     {% endfor %}
-
     </ul>
+    </div>
 {% endblock %}

@@ -15,7 +15,7 @@
                 <table class="table table-striped">
 	              {% for job in job_list %}
 		              <tr>
-                          <td>{{ job.job_name }}</td>
+                          <td><a href="/intern/offer/{{ job.id }}">{{ job.job_name }}</a></td>
                           <td><a href="/company/applicants/{{ job.id }}"> View Job Applicants</a></td>
                           <td><a href="/company/offer/{{ job.id }}"> Edit Job</a></td>
 

@@ -13,16 +13,30 @@
     {% if not is_company %}
         <ul class="nav nav-list">
             {% if job_list %}
-                <table class="table table-striped">
+                <table class="table">
                     <tr>
                         <th>Internship</th><th>Company</th><th>Status</th>
                     </tr>
                     {% for job in job_list %}
-                        <tr>
-                            <td><a href="/intern/offer/{{ job.job.id }}">{{ job.job.job_name }}</a></td>
-                            <td>{{ job.job.company.company_name }}</td>
-                            <td>{{ job.status }}</td>
-                        </tr>
+                        {% if job.status == 'Accepted' %}
+                            <tr class="info">
+                                <td><a href="/intern/offer/{{ job.job.id }}">{{ job.job.job_name }}</a></td>
+                                <td><a href="/company/id/{{ job.job.company.id }}">{{ job.job.company.company_name }}</a></td>
+                                <td>{{ job.status }}</td>
+                            </tr>
+                        {% elif job.status == 'Declined' %}
+                            <tr class="danger">
+                                <td><a href="/intern/offer/{{ job.job.id }}">{{ job.job.job_name }}</a></td>
+                                <td><a href="/company/id/{{ job.job.company.id }}">{{ job.job.company.company_name }}</a></td>
+                                <td>{{ job.status }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td><a href="/intern/offer/{{ job.job.id }}">{{ job.job.job_name }}</a></td>
+                                <td><a href="/company/id/{{ job.job.company.id }}">{{ job.job.company.company_name }}</a></td>
+                                <td>{{ job.status }}</td>
+                            </tr>
+                        {% endif %}
                     {% endfor %}
                 </table>
             {% else %}

@@ -1,8 +1,13 @@
 <ul class="nav nav-list">
     {% if job_list %}
+        <table class="table table-striped">
+        <tr><th>Internship name</th><th>Company</th></tr>
 	    {% for job in job_list %}
-		    <li><a href="/intern/offer/{{ job.id }}">{{ job.job_name }}</a></li>
+            <tr>
+		    <td><a href="/intern/offer/{{ job.id }}">{{ job.job_name }}</a></td><td><a href="/company/id/{{ job.company.id }}">{{ job.company.company_name }}</a> </td>
+            </tr>
 		{% endfor %}
+        </table>
 	{% else %}
         <li>No jobs found.</li>
 	{% endif %}

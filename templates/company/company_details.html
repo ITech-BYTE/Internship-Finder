@@ -1,0 +1,15 @@
+{% extends 'base_with_navbar.html' %}
+
+{% block title %}
+    Company Details
+{% endblock %}
+
+
+{% block content_block %}
+    <h2> Company details </h2>
+    <h4> Name: {{ company.company_name }}</h4>
+
+    <h3>Internships by this company</h3>
+
+    {% include 'joblist.html' with job_list=company.offers.all %}
+{% endblock %}
