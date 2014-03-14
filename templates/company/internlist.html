@@ -1,0 +1,9 @@
+<ul class="nav nav-list">
+
+<table class="table table-striped">
+<tr><th>Name</th></tr>
+    {% for intern in intern_list %}
+    <tr><td><a href="intern/id/{{ intern.id }}">{{ intern.user.first_name }} {{ intern.user.last_name }}</a></td></tr>
+    {% endfor %}
+</table>
+</ul>

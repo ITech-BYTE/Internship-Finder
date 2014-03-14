@@ -8,11 +8,29 @@ $(document).ready(function() {
         });
     });
 
+    $('#skill_dropdown').change(function(){
+        var query;
+        query = $(this).val();
+        $.get('/company/suggest_intern/', {skill_1: query}, function(data){
+            $('#intern_area').html(data);
+        });
+    });
+
     $('#reglist').slimScroll({
         color: '#00f',
         size: '10px',
         height: '100px',
         alwaysVisible: true
+    });
+
+    $('.bxslider').bxSlider({
+        auto: true,
+        mode: 'fade',
+        captions: false,
+        pager: false,
+        controls: false,
+
+        autoControls: false
     });
 });
 

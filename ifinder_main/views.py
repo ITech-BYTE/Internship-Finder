@@ -24,9 +24,12 @@ def home(request):
     # These are the latest offers in the Job table based on the posting date
     latest_offers = Job.objects.order_by('-posting_date')[:5]
 
+    user_type = get_user_type(request.user)
+
     # Add top offers and latest offers to the context dictionary
     context_dict['top_offers'] = top_offers
     context_dict['latest_offers'] = latest_offers
+    context_dict['user_type'] = user_type
 
     return render_to_response("home.html", context_dict, context)
 

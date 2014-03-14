@@ -1,0 +1,34 @@
+
+{% extends 'base_with_navbar.html' %}
+
+{% block title %}
+    Browse Applicants
+{% endblock %}
+
+
+{% block content_block %}
+    <div class="span7">
+        <h1> Browse Applicants! </h1>
+        <div class="span3">
+            <form>
+                <label></label>
+
+                <label>Choose skill</label>
+                <select  class="form-control" name="skill_dropwdown" value="" id="skill_dropdown">
+                    {% for skill in skills %}
+                        <option value="{{ skill.id }}">{{ skill.skill_name }}</option>
+                    {% endfor %}
+                </select>
+
+            </form>
+        </div>
+
+        <div class="span5">
+            <hr/>
+            <div id="intern_area">
+                <label> Please search for the job name above. </label>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

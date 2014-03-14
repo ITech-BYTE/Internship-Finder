@@ -7,17 +7,20 @@
 
 
 {% block content_block %}
-    <ul class="nav nav-list">
+    <div class="span5">
         <h1> Search for internships! </h1>
         <form>
             <label></label>
-            <li><input  class="form-control span3" type="text" name="suggestion" value="" id="suggestion" /></li>
+            <input  class="form-control span3" type="text" name="suggestion" value="" id="suggestion" />
         </form>
-    </ul>
+    </div>
 
-    <hr/>
-    <div id="job_area">
-        <label> Please search for the job name above. </label>
+
+    <div class="span5">
+        <hr/>
+        <div id="job_area">
+            <label> Please search for the job name above. </label>
+        </div>
     </div>
 
 {% endblock %}

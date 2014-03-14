@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from ifinder_main.utilities import get_user_type
 from ifinder_main.forms import InternshipForm
-from ifinder_main.models import Job, Recruiter, Intern, UserProfile, Application
+from ifinder_main.models import Job, Recruiter, Intern, UserProfile, Application, Skill
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 
@@ -198,3 +198,38 @@ def company_details(request, company_id):
 
     except Recruiter.DoesNotExist:
         return render_to_response('error.html', {'error': "Company not found"}, context)
+
+@login_required
+def search_intern(request):
+    context = RequestContext(request)
+
+    user_type = get_user_type(request.user)
+
+    if user_type != 1:
+        return render_to_response('error.html', {'error': "This page is only available to companies"}, context)
+
+    else:
+        skills = Skill.objects.all()
+        context_dict = {}
+        context_dict['user_type'] = 1
+        context_dict['skills'] = skills
+
+        return render_to_response('company/search_intern.html', context_dict, context)
+
+
+@login_required
+def suggest_intern(request):
+    context = RequestContext(request)
+
+    contains = ''
+
+    if request.method == 'GET':
+        print request.GET['skill_1']
+        skill_id_1 = request.GET['skill_1']    # Get the string to search for
+        skill_1 = Skill.objects.get(id=skill_id_1)
+
+        interns = Intern.objects.filter(skills=skill_1)
+
+        # Render the jobs in a list
+        return render_to_response('company/internlist.html', {'intern_list' : interns}, context)
+

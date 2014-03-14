@@ -19,20 +19,20 @@
                     {% for app in applications %}
                         {% if app.status == 'Declined' %}
                             <tr class="warning">
-                                <td><a href="/intern/id/{{ app.intern.id }}" class="btn">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></td>
+                                <td><a href="/intern/id/{{ app.intern.id }}">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></td>
                                 <td style="vertical-align:middle;"><b>This intern is already {{ app.status }}.</b></td><td></td>
                             </tr>
                         {% elif app.status == 'Accepted'  %}
                             <tr class="success">
-                                <td><a href="/intern/id/{{ app.intern.id }}" class="btn">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></td>
+                                <td><a href="/intern/id/{{ app.intern.id }}">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></td>
                                 <td style="vertical-align:middle;"><b>This intern is already {{ app.status }}.</b></td><td></td>
                             </tr>
 
                         {% else %}
                             <tr>
-                                <td><a href="/intern/id/{{ app.intern.id }}" class="btn">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></td>
-                                <td><a href="/company/accept/?intern_id={{ app.intern.id }}&job_id={{ app.job.id }}" class="btn btn-primary" onclick="return confirm('Are u sure you want to accept this intern?')">Accept this intern</a></td>
-                                <td><a href="/company/decline/?intern_id={{ app.intern.id }}&job_id={{ app.job.id }}" class="btn btn-danger" onclick="return confirm('Are u sure you want to decline this intern?')">Decline this intern</a></td>
+                                <td style="vertical-align: middle;"><a href="/intern/id/{{ app.intern.id }}">{{ app.intern.user.first_name }} {{ app.intern.user.last_name }}</a></td>
+                                <td><a href="/company/accept/?intern_id={{ app.intern.id }}&job_id={{ app.job.id }}" class="btn btn-sm btn-primary" onclick="return confirm('Are u sure you want to accept this intern?')">Accept this intern</a></td>
+                                <td><a href="/company/decline/?intern_id={{ app.intern.id }}&job_id={{ app.job.id }}" class="btn btn-sm btn-danger" onclick="return confirm('Are u sure you want to decline this intern?')">Decline this intern</a></td>
                             </tr>
                         {% endif %}
                     {% endfor%}
