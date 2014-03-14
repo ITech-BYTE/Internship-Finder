@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e468d8c-53e4-45dc-8acb-e68d406e5b8e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder.db" afterPath="$PROJECT_DIR$/ifinder.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base_with_navbar.html" afterPath="$PROJECT_DIR$/templates/base_with_navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/bootstrap.css" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/company/company_details.html" afterPath="$PROJECT_DIR$/templates/company/company_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/forms.py" afterPath="$PROJECT_DIR$/ifinder_main/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/intern/intern_details.html" afterPath="$PROJECT_DIR$/templates/intern/intern_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/company/job_profile.html" afterPath="$PROJECT_DIR$/templates/company/job_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/jquery.bxslider.css" afterPath="$PROJECT_DIR$/static/css/jquery.bxslider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/models.py" afterPath="$PROJECT_DIR$/ifinder_main/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/intern/offer.html" afterPath="$PROJECT_DIR$/templates/intern/offer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/populate_internfinder.py" afterPath="$PROJECT_DIR$/populate_internfinder.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/register.html" afterPath="$PROJECT_DIR$/templates/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder/urls.py" afterPath="$PROJECT_DIR$/ifinder/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/views.py" afterPath="$PROJECT_DIR$/ifinder_main/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ifinder.iws" />
@@ -41,18 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="72" selection-start="5920" selection-end="5920" vertical-scroll-proportion="0.6024735" vertical-offset="1654" max-vertical-offset="2280">
+            <state line="126" column="26" selection-start="5747" selection-end="5747" vertical-scroll-proportion="-45.0" vertical-offset="810" max-vertical-offset="2280">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ifinder/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="37" selection-start="996" selection-end="996" vertical-scroll-proportion="0.36395147" vertical-offset="0" max-vertical-offset="577">
               <folding>
-                <element signature="n#style#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#2;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#0;n#p#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,7 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ifinder/urls.py" />
         <option value="$PROJECT_DIR$/ifinder_main/views.py" />
         <option value="$PROJECT_DIR$/ifinder_main/models.py" />
         <option value="$PROJECT_DIR$/templates/company/job_profile.html" />
@@ -92,6 +79,7 @@
         <option value="$PROJECT_DIR$/static/css/jquery.bxslider.css" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/ifinder/urls.py" />
       </list>
     </option>
   </component>
@@ -382,7 +370,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ifinder" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -408,27 +416,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ifinder" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -546,9 +534,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19838946" sideWeight="0.671521" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -565,20 +553,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/company/search_intern.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="23" selection-start="741" selection-end="741" vertical-scroll-proportion="0.70848054" vertical-offset="19" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ifinder_main/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="146" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="990">
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="32" column="146" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.html">
@@ -597,16 +574,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="50" selection-start="506" selection-end="506" vertical-scroll-proportion="-0.06779661" vertical-offset="310" max-vertical-offset="900">
-          <folding />
-        </state>
+        <state line="19" column="50" selection-start="506" selection-end="506" vertical-scroll-proportion="-0.06779661" vertical-offset="310" max-vertical-offset="900" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ifinder_main/views_company.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="54" selection-start="7731" selection-end="7731" vertical-scroll-proportion="3.5996535" vertical-offset="1268" max-vertical-offset="3510">
-          <folding />
-        </state>
+        <state line="230" column="54" selection-start="7731" selection-end="7731" vertical-scroll-proportion="3.5996535" vertical-offset="1268" max-vertical-offset="3510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/company/job_profile.html">
@@ -639,9 +612,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/jquery.bxslider.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="27" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="3015">
-          <folding />
-        </state>
+        <state line="35" column="27" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="3015" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
@@ -664,29 +635,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/populate_internfinder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="53" selection-start="11155" selection-end="11155" vertical-scroll-proportion="3.7175043" vertical-offset="0" max-vertical-offset="5625">
-          <folding />
-        </state>
+        <state line="143" column="53" selection-start="11155" selection-end="11155" vertical-scroll-proportion="3.7175043" vertical-offset="0" max-vertical-offset="5625" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5722" column="2" selection-start="121079" selection-end="121079" vertical-scroll-proportion="-3.8470364" vertical-offset="87842" max-vertical-offset="88365">
-          <folding />
-        </state>
+        <state line="5722" column="2" selection-start="121079" selection-end="121079" vertical-scroll-proportion="-3.8470364" vertical-offset="87842" max-vertical-offset="88365" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="72" selection-start="5920" selection-end="5920" vertical-scroll-proportion="0.6024735" vertical-offset="1654" max-vertical-offset="2280">
+        <state line="126" column="26" selection-start="5747" selection-end="5747" vertical-scroll-proportion="-45.0" vertical-offset="810" max-vertical-offset="2280">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ifinder/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="37" selection-start="996" selection-end="996" vertical-scroll-proportion="0.36395147" vertical-offset="0" max-vertical-offset="577">
           <folding>
-            <element signature="n#style#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#strong#0;n#p#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,7 +12,7 @@ urlpatterns = patterns('',
                        url(r'^profile/$', profile, name='profile'),                # Profile page (for both interns and companies, depending in logged in user)
                        url(r'^search/$', search, name='search'),                   # Search page
                        url(r'^suggest_job/$', suggest_job, name='suggest'),        # Search result set embedded in search page
-                       url(r'^about/', about, name='about'),    # Urls that start with /company/
+                       url(r'^about/$', about, name='about'),
                        url(r'^admin/', include(admin.site.urls)),                  # Admin page
                        url(r'^intern/', include('ifinder_main.urls_intern')),      # Urls that start with /intern/
                        url(r'^company/', include('ifinder_main.urls_company')),    # Urls that start with /company/
