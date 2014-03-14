@@ -25,12 +25,14 @@
 
 
         <div class="span7" style="border-style:solid; border-width:2px; border-color: cornflowerblue; padding: 20px; background-color: #ffffff;">
-            <p><h3> Company: <a href="/company/id/{{ company.id }}">{{ company.company_name }}</a></h3></p>
+            <p><h3><a href="/company/id/{{ company.id }}">{{ company.company_name }}</a></h3></p>
 
-
+            <p> Monthly salary: ${{ internship.salary }}</p>
+            <p> Deadline: {{ internship.deadline }}</p>
+            <p> Location: {{ internship.location }}</p>
 
             <h4> Description: </h4>
-            <p style="font-size: 16px;"> {{ internship.job_description }}</p>
+            <p class="text-justify" style="font-size: 16px;"> {{ internship.job_description }}</p>
             <h4> Required skills: </h4>
 
             <!-- Print required skill list if there is any -->

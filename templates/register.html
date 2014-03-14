@@ -9,7 +9,7 @@
         <h3> You are already registered. </h3>
     {% else %}
         {% if is_reg %}
-            <h1>Register with Internship Finder</h1>
+            <h1>Register with InternFinder</h1>
         {% else %}
             <h1>Edit your profile here!</h1><br />
         {% endif %}
@@ -46,6 +46,12 @@
 
 
                 {% if reg_type == 1 %}
+                    <label>{{ profile_form.introduction.help_text }}<br/></label>
+                    <div class="form-inline">
+                        {{ profile_form.introduction.errors }}
+                        {{ profile_form.introduction }}
+                    </div>
+
                     <label>{{ profile_form.dob.help_text }}<br/></label>
                     <div class="form-inline">
                         {{ profile_form.dob.errors }}

@@ -8,6 +8,8 @@
 {% block content_block %}
     <h2> Company details </h2>
     <h4> Name: {{ company.company_name }}</h4>
+    <p class="text-justify">{{ company.company_description }}</p>
+    <p>Contact: <a href="mailto:{{ company.user.email }}?subject=internfinder">{{ company.user.email }}</a></p>
 
     <h3>Internships by this company</h3>
 

@@ -40,6 +40,24 @@
                     {{ job_form.job_description }}
                 </div>
 
+                <label>{{ job_form.location.help_text }}<br/></label>
+                <div class="form-inline">
+                    {{ job_form.location.errors }}
+                    {{ job_form.location }}
+                </div>
+
+                <label>{{ job_form.salary.help_text }}<br/></label>
+                <div class="form-inline">
+                    {{ job_form.salary.errors }}
+                    {{ job_form.salary }}
+                </div>
+
+                <label>{{ job_form.deadline.help_text }}<br/></label>
+                <div class="form-inline">
+                    {{ job_form.deadline.errors }}
+                    {{ job_form.deadline }}
+                </div>
+
 
                 <hr/>
                 {{ job_form.skills.error_messages }}

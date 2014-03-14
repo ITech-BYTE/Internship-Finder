@@ -257,3 +257,10 @@ def suggest_job(request):
 
     # Render the jobs in a list
     return render_to_response('joblist.html', {'job_list' : job_list}, context)
+
+def about(request):
+    context = RequestContext(request)
+
+    user_type = get_user_type(request.user)
+
+    return render_to_response('about.html', {'user_type': user_type}, context)

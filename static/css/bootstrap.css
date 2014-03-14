@@ -276,7 +276,9 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #555555;
-  background-color: #ffffff;
+  padding-bottom: 0px;
+  /*background-color: #ffffff;*/
+  background-image: url('../img/bg1.png');
 }
 input,
 button,
@@ -5718,6 +5720,7 @@ button.close {
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff04519b', endColorstr='#ff033769', GradientType=0);
   filter: none;
+  margin-bottom: 0px;
   border-bottom: 1px solid #022241;
 }
 .btn {

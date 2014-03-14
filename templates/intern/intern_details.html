@@ -7,19 +7,21 @@
 
 {% block content_block %}
     <div class="span7">
-    <h2> Intern details </h2>
-    <table class="table">
-    <tr><td>First Name</td><td>{{ intern.user.first_name }}</td></tr>
-    <tr><td>Last Name</td><td>{{ intern.user.last_name }}</td></tr>
-    <tr><td>Date of Birth</td><td>{{ intern.dob }}</td></tr>
-    <tr><td>Contact email</td><td>{{ intern.user.email }}</td></tr>
-    </table>
+        <h2> Intern details </h2>
+        <table class="table table-striped">
+            <tr><td>First Name</td><td>{{ intern.user.first_name }}</td></tr>
+            <tr><td>Last Name</td><td>{{ intern.user.last_name }}</td></tr>
+            <tr><td>Date of Birth</td><td>{{ intern.dob }}</td></tr>
+            <tr><td>Education</td><td>{{ intern.education }}</td></tr>
+            <tr><td>Contact email</td><td><a href="mailto:{{ intern.user.email }}?subject=internfinder">{{ intern.user.email }}</a></td></tr>
+            <tr><td>Personal statement</td><td>{{ intern.introduction }}</td></tr>
+        </table>
 
-    <label>Skills</label>
-    <ul>
-    {% for skill in intern.skills.all %}
-        <li> {{ skill }}</li>
-    {% endfor %}
-    </ul>
+        <label>Skills</label>
+        <ul>
+            {% for skill in intern.skills.all %}
+                <li> {{ skill }}</li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

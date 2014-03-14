@@ -17,7 +17,9 @@ class Skill(models.Model):
 
 class Intern(UserProfile):
     dob = models.DateField()
+    introduction = models.CharField(max_length=500)
     skills = models.ManyToManyField(Skill)
+    education = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.user.username
@@ -25,6 +27,7 @@ class Intern(UserProfile):
 
 class Recruiter(UserProfile):
     company_name = models.CharField(max_length=20, unique=True)
+    company_description = models.CharField(max_length=400)
     url = models.URLField(max_length=100)
 
     def __unicode__(self):
@@ -37,7 +40,10 @@ class Job(models.Model):
     applicants = models.ManyToManyField(Intern, related_name='applications', through='Application')
     job_name = models.CharField(max_length=30)
     job_description = models.CharField(max_length=300)
-    posting_date = models.DateField(auto_now_add= True)
+    posting_date = models.DateField(auto_now_add=True)
+    deadline = models.DateField()
+    salary = models.PositiveIntegerField()
+    location = models.CharField(max_length=100)
 
     def __unicode__(self):
         return self.job_name
