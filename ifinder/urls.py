@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
                        url(r'^$', home, name='home'),                              # Homepage
-                       url(r'^byte/$', about, name='about'),
+                       url(r'^about/$', about, name='about'),
                        url(r'^login/$', user_login, name='login'),                 # Login page
                        url(r'^logout/$', user_logout, name='logout'),              # Url to call logout function (redirected to homepage after logout)
                        url(r'^profile/$', profile, name='profile'),                # Profile page (for both interns and companies, depending in logged in user)
