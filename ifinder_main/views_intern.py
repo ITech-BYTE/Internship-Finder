@@ -52,18 +52,15 @@ def my_recommended(request):
     job_list = []
 
     if is_company:
-        message = "This site is only available to interns."
+        return render_to_response('error.html', {'error': "This site is only available to interns."}, context)
 
     else:
-        message = "Take a look at these jobs:"
         job_list = get_recommended(intern=Intern.objects.get(user=request.user))
 
-    context_dict['is_company'] = is_company
     context_dict['job_list'] = job_list
-    context_dict['message'] = message
     context_dict['user_type'] = get_user_type(request.user)
 
-    return render_to_response("intern/intern_jobs.html", context_dict, context)
+    return render_to_response("intern/recommended.html", context_dict, context)
 
 @login_required()
 def intern_details(request, intern_id):

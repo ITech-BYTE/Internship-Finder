@@ -1,0 +1,11 @@
+{% extends 'base_with_navbar.html' %}
+
+{% block title %} Recommended Internships {% endblock %}
+
+{% block content_block %}
+
+<h3>Take a look at these jobs!</h3>
+
+{% include 'joblist.html' with job_list=job_list %}
+
+{% endblock %}
