@@ -30,7 +30,7 @@ class UserEditForm(forms.ModelForm):
 class InternForm(forms.ModelForm):
     dob = forms.DateField(help_text="Please enter your date of birth", widget=forms.extras.widgets.SelectDateWidget(attrs={'class':'form-control'},years=range(1980, date.today().year - 18)))
     skills = forms.ModelMultipleChoiceField(help_text="Please select your skills", queryset=Skill.objects.all(), widget=forms.CheckboxSelectMultiple())
-    introduction = forms.CharField(help_text="Please introduce yourself below.", widget=forms.Textarea(attrs={'class': 'form-control','cols' : '49'}))
+    introduction = forms.CharField(help_text="Please introduce yourself below.", widget=forms.Textarea(attrs={'class': 'form-control','cols' : '51'}))
 
 
     class Meta:

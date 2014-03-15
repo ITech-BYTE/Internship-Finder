@@ -29,6 +29,7 @@ $(document).ready(function() {
         captions: false,
         pager: false,
         controls: false,
+        adaptive: true,
 
         autoControls: false
     });

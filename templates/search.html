@@ -7,18 +7,19 @@
 
 
 {% block content_block %}
-    <div class="span5">
-        <h1> Search for internships! </h1>
-        <form>
-            <label></label>
-            <input  class="form-control span3" type="text" name="suggestion" value="" id="suggestion" />
-        </form>
+    <div class="row"><div class="col-lg-8"><h1> Search for internships! </h1></div></div>
+    <div class="row">
+        <div class="col-lg-7">
+            <form>
+                <input  class="form-control" type="text" name="suggestion" value="" id="suggestion" />
+            </form>
+        </div>
     </div>
 
 
-    <div class="span5">
-        <hr/>
-        <div id="job_area">
+    <hr/>
+    <div id="job_area" class="row">
+        <div class="col-lg-7">
             <label> Please search for the job name above. </label>
         </div>
     </div>

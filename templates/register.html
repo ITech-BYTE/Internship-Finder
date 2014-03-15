@@ -28,7 +28,7 @@
             {% endif %}
         {% else %}
 
-            <form class="form-signin span4" role="form" id="user_form" method="post" action="{{ action }}"
+            <form class="form-signin col-lg-7" role="form" id="user_form" method="post" action="{{ action }}"
                   enctype="multipart/form-data">
 
                 {% csrf_token %}
@@ -77,7 +77,7 @@
                 {% endif %}
 
                 <!-- Provide a button to click to submit the form. -->
-                <input class="btn btn-primary" type="submit" name="submit" value="Register" />
+                <input class="btn btn-primary" type="submit" name="submit" value="Save" />
             </form>
         {% endif %}
     {% endif %}

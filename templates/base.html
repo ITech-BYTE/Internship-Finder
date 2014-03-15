@@ -5,17 +5,17 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen" />
-    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet" />
+    <!--<link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet" />-->
+    <!--<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen" />-->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+    <!--<link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet" /> -->
     <link href="{% static 'css/jquery.bxslider.css' %}" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/vnd.microsoft.icon" />
     <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/vnd.microsoft.icon" />
     <title> InternFinder - {% block title %}Missing title!{% endblock %}</title>
 </head>
 
-
+<body style="padding-top: 70px;">
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -104,9 +104,8 @@
 </div>
 
 
-<div class="container-fluid" style="padding-bottom: 10px; background-color:#567ea7;">
-
-    <div class="span4" style="color:#FFFFFF; font-size: 16px; font-weight:900; padding-top: 5px; text-align:center; ">
+<div class="container-fluid" style="background-color:#567ea7;">
+    <div class="col-xs-12 col-sm-4 col-lg-4" style="color:#FFFFFF; font-size: 16px; font-weight:900;text-align:center; ">
         <p>Left column</p>
         <p>Left column</p>
         <p>Left column</p>
@@ -115,14 +114,14 @@
 
 
     </div>
-    <div class="span4" style=" color:#FFFFFF; font-size: 16px; font-weight:900; padding-top: 5px; text-align:center; ">
+    <div class="col-xs-12 col-sm-4 col-lg-4" style=" color:#FFFFFF; font-size: 16px; font-weight:900;text-align:center; ">
         <p>Left column</p>
         <p>Left column</p>
         <p>Left column</p>
         <p>Left column</p>
         <p>Left column</p>
     </div>
-    <div class="span4" style="color:#FFFFFF; font-size: 16px; font-weight:900; padding-top: 5px; text-align:center;">
+    <div class="col-xs-12 col-sm-4 col-lg-4" style="color:#FFFFFF; font-size: 16px; font-weight:900;text-align:center;">
         <p>Left column</p>
         <p>Left column</p>
         <p>Left column</p>
@@ -131,9 +130,9 @@
     </div>
 </div>
 
-<div style="height: 100%; background-color: #044584;" class="text-center" role="navigation">
-    <p style="padding-top: 5px; padding-bottom: 5px; padding-left: 150px; padding-right: 150px"><strong style="color: #ffffff">
-       Internship Finder © 2014. Web development by <a href="/about/">Itech-BYTE@UniversityOfGlasgow</a>.</strong></p>
+<div class="container-fluid text-center" style="background-color: #044584; height: 40px;padding-top: 10px;">
+    <div class="col-xs-4 col-sm-4 col-lg-4 pull-left"><strong style="color: #ffffff">Internship Finder © 2014.</strong></div>
+    <div class="col-xs-4 col-sm-4 col-lg-4 pull-right"><strong style="color: #ffffff">Web development by <a href="/about/">Itech-BYTE@UniversityOfGlasgow</a>.</strong></div>
 </div>
 
 <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>

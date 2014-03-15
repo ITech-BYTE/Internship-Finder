@@ -5,75 +5,67 @@
 
 {% block body_block %}
 
-    <!--SLIDER -->
-    <table class="span10">
-        <tr>
-            <td style="padding-bottom: 15px;">
-            <div class="row-fluid">
-                <div class="bxslider">
-                    <p><a href="/company/id/17/"><img src="{% static 'img/slide1.jpg' %}" title="Amazone"/></a></p>
-                    <p><a href="/company/id/20/"><img src="{% static 'img/slide2.jpg' %}" title="IFR"/></a></p>
-                    <p><a href="/company/id/16"><img src="{% static 'img/slide3.jpg' %}" title="Skyscorner"/></a></p>
-                </div>
+    <div class="bxslider" style="text-align: center">
+        <p><a ref="/company/id/17/"><img src="{% static 'img/slide1.jpg' %}" title="Amazone"/></a></p>
+        <p><a href="/company/id/20/"><img src="{% static 'img/slide2.jpg' %}" title="IFR"/></a></p>
+        <p><a href="/company/id/16"><img src="{% static 'img/slide3.jpg' %}" title="Skyscorner"/></a></p>
+    </div>
+
+    <div class="well container" style="margin-top: 20px;">
+        <div class="row fluid">
+            <div class="col-xs-12 col-sm-6 col-lg-6 pull-left">
+                <a href="/intern/register/"><img src="{% static 'img/reg_intern.jpg' %}" class="center-block" /></a>
             </div>
-        </td>
-        </tr>
-        <tr>
-            <td>
-
-                <div class="well">
-                    <div class="row-fluid">
-                        <div class="panel panel-default span6">
-                            <a href="/intern/register/"><img src="{% static 'img/reg_intern.jpg' %}" style="max-height: 100%; max-width: 100%" /></a>
-                        </div>
 
 
-                        <div class="panel panel-default span6">
-                            <a href="/company/register/"><img src="{% static 'img/reg_company.jpg' %}" style="max-height: 100%; max-width: 100%" /></a>
-                    </div>
-                    <hr/>
+            <div class="col-xs-12 col-sm-6 col-lg-6 pull-right">
+                <a href="/company/register/"><img src="{% static 'img/reg_company.jpg' %}" class="center-block" /></a>
+            </div>
+        </div>
 
-                    <div class="row-fluid">
-                        <div class="panel panel-default span6">
-                            <div class="panel-title text-center"><h3>Our top offers</h3></div>
-                            <div class="panel-body">
-                                {% if top_offers %}
-                                    <table class="table table-striped">
-                                        {% for offer in top_offers %}
-                                            <tr>
-                                                <td> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a></td>
-                                                <td>Application count: {{ offer.applicant_count }}</td>
-                                            </tr>
-                                        {% endfor %}
-                                    </table>
-                                {% else %}
-                                    <p> We don't have any top offers :( </p>
-                                {% endif %}
-                            </div>
-                        </div>
+        <hr/>
 
+        <div class="row-fluid">
+            <div class="col-xs-12 col-sm-6 col-lg-6 pull-left">
+                <div class="panel panel-default" style="margin: 30px;">
+                    <div class="panel-title text-center"><h3>Our top offers</h3></div>
+                    <div class="panel-body">
+                        {% if top_offers %}
+                            <table class="table table-striped">
+                                {% for offer in top_offers %}
+                                    <tr>
+                                        <td> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a></td>
+                                        <td>Application count: {{ offer.applicant_count }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        {% else %}
+                            <p> We don't have any top offers :( </p>
+                        {% endif %}
+                    </div> <!-- Panel body -->
+                </div> <!-- Panel -->
+            </div> <!-- Column Class -->
 
-                        <div class="panel panel-default span6">
-                            <div class="panel-title text-center"><h3>Our latest offers</h3></div>
-                            <div class="panel-body">
-                                {% if latest_offers %}
-                                    <table class="table table-striped">
-                                        {% for offer in latest_offers %}
-                                            <tr>
-                                                <td> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a></td>
-                                                <td>{{ offer.posting_date }}</td>
-                                            </tr>
-                                        {% endfor %}
+            <div class="col-xs-12 col-sm-6 col-lg-6 pull-right">
+                <div class="panel panel-default" style="margin: 30px;">
+                    <div class="panel-title text-center"><h3>Our latest offers</h3></div>
+                    <div class="panel-body">
+                        {% if latest_offers %}
+                            <table class="table table-striped">
+                                {% for offer in latest_offers %}
+                                    <tr>
+                                        <td> <a href='/intern/offer/{{ offer.id }}'> {{ offer }} </a></td>
+                                        <td>{{ offer.posting_date }}</td>
+                                    </tr>
+                                {% endfor %}
 
-                                    </table>
-                                {% else %}
-                                    <p> We don't have any latest offers :( </p>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
+                            </table>
+                        {% else %}
+                            <p> We don't have any latest offers :( </p>
+                        {% endif %}
+                    </div> <!-- Panel body -->
+                </div> <!-- Panel -->
+            </div> <!--Column class -->
+        </div> <!-- Top offers row -->
+    </div>
 {% endblock %}

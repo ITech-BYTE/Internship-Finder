@@ -4,7 +4,7 @@
 
 {% block body_block %}
 
-<div class="well sidebar-nav span3 pull-left">
+<div class="well sidebar-nav col-xs-12 col-sm-3 col-lg-3">
 {% if user_type == 0 %}
     {% include 'navbar_unregistered.html' %}
 {% elif user_type == 1 %}
@@ -15,7 +15,7 @@
 </div>
 
 
-<div class="well sidebar-nav span8 pull-right" style="min-height: 800px; padding-left: 20px;">
+<div class="well well-lg sidebar-nav col-xs-12 col-sm-8 col-lg-8 col-lg-offset-1 col-sm-offset-1" style="min-height: 400px;">
 {% block content_block %} Something is wrong {% endblock %}
 </div>
 
