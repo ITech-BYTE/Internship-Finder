@@ -19,7 +19,7 @@
                 <strong>Thank you for registering!</strong>
                 <hr>
                 <p>You can now log in
-                    <a href="/login/" class="btn btn-primary"> Log in</a>
+                    <a href="/login/" class="btn btn-primary">Log in</a>
                 </p>
             {% else %}
                 <strong>Successfully changed your data. </strong>
@@ -28,7 +28,7 @@
             {% endif %}
         {% else %}
 
-            <form class="form-signin col-lg-7" role="form" id="user_form" method="post" action="{{ action }}"
+            <form class="col-lg-7" role="form" id="user_form" method="post" action="{{ action }}"
                   enctype="multipart/form-data">
 
                 {% csrf_token %}
@@ -81,5 +81,4 @@
             </form>
         {% endif %}
     {% endif %}
-    </div>
 {% endblock %}

@@ -45,16 +45,16 @@ class CompanyForm(forms.ModelForm):
 
     class Meta:
         model = Recruiter
-        fields = ('url','company_name', 'company_description')
+        fields = ('url', 'company_name', 'company_description')
 
 
 class InternshipForm(forms.ModelForm):
-    job_name = forms.CharField(max_length=200, help_text="Please enter the name of your internship.", widget=forms.TextInput(attrs={'class':'form-control', 'size': 68}))
-    job_description = forms.CharField(help_text="Please enter the description.", widget=forms.Textarea(attrs={'class': 'form-control','cols' : '70'}))
+    job_name = forms.CharField(max_length=200, help_text="Please enter the name of your internship.", widget=forms.TextInput(attrs={'class':'form-control'}))
+    job_description = forms.CharField(help_text="Please enter the description.", widget=forms.Textarea(attrs={'class': 'form-control'}))
     skills = forms.ModelMultipleChoiceField(help_text="Please select the skills desired for this position.", queryset=Skill.objects.all(), widget=forms.CheckboxSelectMultiple())
-    deadline = forms.DateField(help_text="Please enter the deadline for application", widget=forms.extras.widgets.SelectDateWidget(attrs={'class':'form-control'},years=range(date.today().year, date.today().year + 1)))
-    salary = forms.IntegerField(help_text="Please enter the monthly salary.", min_value=500, max_value=3000, widget=forms.TextInput(attrs={'class':'form-control', 'size' : 68}))
-    location = forms.CharField(max_length=200, help_text="Please enter the location of your internship.", widget=forms.TextInput(attrs={'class':'form-control', 'size': 68}))
+    deadline = forms.DateField(help_text="Please enter the deadline for application", widget=forms.extras.widgets.SelectDateWidget(attrs={'class':'form-control'}, years=range(date.today().year, date.today().year + 1)))
+    salary = forms.IntegerField(help_text="Please enter the monthly salary.", min_value=500, max_value=3000, widget=forms.TextInput(attrs={'class':'form-control'}))
+    location = forms.CharField(max_length=200, help_text="Please enter the location of your internship.", widget=forms.TextInput(attrs={'class':'form-control'}))
 
     class Meta:
         model = Job
