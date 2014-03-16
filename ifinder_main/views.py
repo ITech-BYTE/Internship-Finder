@@ -33,6 +33,19 @@ def home(request):
 
     return render_to_response("home.html", context_dict, context)
 
+def my_home(request):
+    user_type = get_user_type(request.user)
+
+    if user_type == 0:
+        return HttpResponseRedirect('/')
+
+    elif user_type == 1:
+        return HttpResponseRedirect('/company/home/')
+
+    else:
+        return HttpResponseRedirect('/intern/home/')
+
+
 # LOGOUT
 # Logs out the user then redirects to the homepage
 def user_logout(request):

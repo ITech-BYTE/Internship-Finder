@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from ifinder_main.views import user_login, user_logout, home, profile, search, suggest_job, about
+from ifinder_main.views import user_login, user_logout, home, profile, search, suggest_job, about, my_home
 
 
 from django.contrib import admin
@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
                        url(r'^$', home, name='home'),                              # Homepage
+                       url(r'^home/$', my_home, name='my_home'),                   # Personalised Homepage Redirect
                        url(r'^about/$', about, name='about'),
                        url(r'^login/$', user_login, name='login'),                 # Login page
                        url(r'^logout/$', user_logout, name='logout'),              # Url to call logout function (redirected to homepage after logout)
