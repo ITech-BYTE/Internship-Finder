@@ -3,7 +3,6 @@ from ifinder_main.views_company import register_company, my_offers, get_applican
     accept_intern, decline_intern, company_details, search_intern, suggest_intern
 
 urlpatterns = patterns('',
-        url(r'^$', company_home, name='home'),    # Company registration page
         url(r'^register/$', register_company, name='register_company'),    # Company registration page
         url(r'^home/$', company_home, name='home_company'),    # Company home page
         url(r'^id/(?P<company_id>\w+)/$', company_details, name='company_details'),    # Company details page

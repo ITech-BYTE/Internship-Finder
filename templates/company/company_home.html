@@ -7,11 +7,10 @@
 
 
 {% block content_block %}
-
-
+    <h1>Welcome, {{ user.first_name }}</h1>
     <hr/>
-    <div id="job_area">
-        <label> Employee Home Page Area </label>
-    </div>
+
+    <h2>Your latest offers</h2>
+    {% include 'joblist.html' with job_list=latest %}
 
 {% endblock %}

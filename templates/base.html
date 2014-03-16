@@ -34,15 +34,15 @@
 
                 <!-- Intern dropdown menu -->
                 {% if user_type == 2 %}
-                    <li><a href="/intern/applications/"><img src="{% static 'img/home_icon.png' %}"></a></li>
+                    <li><a href="/intern/home/"><img src="{% static 'img/home_icon.png' %}"></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Area <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                                                        <li><a href="/intern/home/">My home</a></li>
                             <li><a href="/profile/">My profile</a></li>
                             <li><a href="/intern/applications/">My applications</a></li>
                             <li class="divider"></li>
                             <li><a href="/search/">Search internship</a></li>
-                            <li><a href="/intern/recommend/">Recommended for me</a></li>
                         </ul>
                     </li>
 

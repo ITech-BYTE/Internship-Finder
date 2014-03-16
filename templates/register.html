@@ -7,11 +7,14 @@
 {% block content_block %}
     {% if user.is_authenticated and is_reg %}
         <h3> You are already registered. </h3>
+
     {% else %}
         {% if is_reg %}
             <h1>Register with InternFinder</h1>
         {% else %}
-            <h1>Edit your profile here!</h1><br />
+            <h1>Edit your profile here!</h1>
+            <h2>Username: {{ user.username }}</h2>
+
         {% endif %}
 
         {% if registered %}
@@ -27,6 +30,11 @@
 
             {% endif %}
         {% else %}
+            {% if reg_type == 1 and is_reg %}
+                <h4>Do you have internships to offer? Register <a href="/company/register/">here</a>.</h4>
+            {% endif%}
+
+            <hr/>
 
             <form class="col-lg-7" role="form" id="user_form" method="post" action="{{ action }}"
                   enctype="multipart/form-data">
@@ -47,9 +55,15 @@
 
                 {% if reg_type == 1 %}
                     <label>{{ profile_form.introduction.help_text }}<br/></label>
-                    <div class="form-inline">
+                    <div class="form-group">
                         {{ profile_form.introduction.errors }}
                         {{ profile_form.introduction }}
+                    </div>
+
+                    <label>{{ profile_form.education.help_text }}<br/></label>
+                    <div class="form-group">
+                        {{ profile_form.education.errors }}
+                        {{ profile_form.education }}
                     </div>
 
                     <label>{{ profile_form.dob.help_text }}<br/></label>

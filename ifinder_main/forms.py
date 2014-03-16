@@ -30,18 +30,29 @@ class UserEditForm(forms.ModelForm):
 class InternForm(forms.ModelForm):
     dob = forms.DateField(help_text="Please enter your date of birth", widget=forms.extras.widgets.SelectDateWidget(attrs={'class':'form-control'},years=range(1980, date.today().year - 18)))
     skills = forms.ModelMultipleChoiceField(help_text="Please select your skills", queryset=Skill.objects.all(), widget=forms.CheckboxSelectMultiple())
-    introduction = forms.CharField(help_text="Please introduce yourself below.", widget=forms.Textarea(attrs={'class': 'form-control','cols' : '51'}))
-
+    introduction = forms.CharField(help_text="Please introduce yourself below.", widget=forms.Textarea(attrs={'class': 'form-control'}))
+    education = forms.CharField(help_text="Please enter your most relevant education", widget=forms.TextInput(attrs={'class':'form-control'}))
 
     class Meta:
         model = Intern
-        fields = ('dob','skills', 'introduction')
+        fields = ('dob','skills', 'introduction', 'education')
 
 
 class CompanyForm(forms.ModelForm):
     company_name = forms.CharField(max_length=200, help_text="Please enter the name of your company.", widget=forms.TextInput(attrs={'class':'form-control'}))
-    company_description = forms.CharField(help_text="Please enter the description of you company.", widget=forms.Textarea(attrs={'class': 'form-control','cols' : '70'}))
+    company_description = forms.CharField(help_text="Please enter the description of you company.", widget=forms.Textarea(attrs={'class': 'form-control'}))
     url = forms.URLField(max_length=200, help_text="Please enter the url of your website.", widget=forms.TextInput(attrs={'class':'form-control'}))
+
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        url = cleaned_data.get('url')
+
+        # If url is not empty and doesn't start with 'http://', prepend 'http://'.
+        if url and not url.startswith('http://'):
+            url = 'http://' + url
+            cleaned_data['url'] = url
+
+        return cleaned_data
 
     class Meta:
         model = Recruiter

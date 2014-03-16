@@ -7,10 +7,12 @@
 
 {% block content_block %}
     <h2> Company details </h2>
-    <h4> Name: {{ company.company_name }}</h4>
+    <hr/>
+    <h2>{{ company.company_name }}</h2>
     <p class="text-justify">{{ company.company_description }}</p>
-    <p>Contact: <a href="mailto:{{ company.user.email }}?subject=internfinder">{{ company.user.email }}</a></p>
-
+    <p><label>Website: <a href="{{ company.url }}">{{ company.url }}</a></label></p>
+    <p><label>Contact name: {{ company.user.first_name }} {{ company.user.last_name }}</label></p>
+    <p><label>Contact email:<a href="mailto:{{ company.user.email }}?subject=internfinder">{{ company.user.email }}</a></label></p>
     <h3>Internships by this company</h3>
 
     {% include 'joblist.html' with job_list=company.offers.all %}

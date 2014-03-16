@@ -324,7 +324,8 @@ def populate():
 
 def add_user(username, fname, lname, password, email):
     p = User.objects.get_or_create(username=username, first_name=fname, last_name=lname, email=email)[0]
-    p.set_password(password)
+    p.set_password("byte")
+    p.save()
     return p
 
 def add_intern(user, dat, intro, education):

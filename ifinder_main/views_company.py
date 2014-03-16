@@ -21,7 +21,13 @@ def company_home(request):
     context_dict = {}
     context_dict['user_type'] = user_type
 
+
     if user_type == 1:
+        company = Recruiter.objects.get(user=request.user)
+        latest = company.offers.order_by('-posting_date')[:3]
+
+        context_dict['latest'] = latest
+        context_dict['company'] = company
         return render_to_response("company/company_home.html", context_dict, context)
 
     else:
@@ -222,14 +228,20 @@ def suggest_intern(request):
     context = RequestContext(request)
 
     contains = ''
+    user_type = get_user_type(request.user)
 
-    if request.method == 'GET':
-        print request.GET['skill_1']
-        skill_id_1 = request.GET['skill_1']    # Get the string to search for
-        skill_1 = Skill.objects.get(id=skill_id_1)
+    if request.method == 'GET' and user_type==1:
+        skill = request.GET['skill_1']    # Get the string to search for
+        skill_1 = Skill.objects.get(id=skill)
 
-        interns = Intern.objects.filter(skills=skill_1)
+        company = Recruiter.objects.get(user=request.user)
+        intern_IDs = Application.objects.filter(job=company.offers.all()).values_list('intern', flat=True)
+
+
+        interns = Intern.objects.filter(skills=skill, id__in=intern_IDs)
 
         # Render the jobs in a list
         return render_to_response('company/internlist.html', {'intern_list' : interns}, context)
 
+    else:
+        return render_to_response('error.html', {'error': "Something went wrong"}, context)
