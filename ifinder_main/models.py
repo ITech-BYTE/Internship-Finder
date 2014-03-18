@@ -9,11 +9,16 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return self.user.username
 
+
+
 class Skill(models.Model):
     skill_name = models.CharField(max_length=30, unique=True)
 
     def __unicode__(self):
         return self.skill_name
+
+    class Meta:
+        ordering = ['skill_name']
 
 
 class Intern(UserProfile):
@@ -25,6 +30,8 @@ class Intern(UserProfile):
     def __unicode__(self):
         return self.user.username
 
+    class Meta:
+        ordering = ['user__last_name', 'user__first_name',]
 
 class Recruiter(UserProfile):
     company_name = models.CharField(max_length=20, unique=True)
@@ -33,6 +40,8 @@ class Recruiter(UserProfile):
 
     def __unicode__(self):
         return self.user.username
+
+    ordering = ['company_name']
 
 
 class Job(models.Model):
@@ -48,6 +57,9 @@ class Job(models.Model):
 
     def __unicode__(self):
         return self.job_name
+
+    class Meta:
+        ordering = ['job_name']
 
 
 class Application(models.Model):

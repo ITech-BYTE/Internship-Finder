@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6e468d8c-53e4-45dc-8acb-e68d406e5b8e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/company/navbar_company.html" afterPath="$PROJECT_DIR$/templates/company/navbar_company.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder/urls.py" afterPath="$PROJECT_DIR$/ifinder/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/error.html" afterPath="$PROJECT_DIR$/templates/error.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/forms.py" afterPath="$PROJECT_DIR$/ifinder_main/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/models.py" afterPath="$PROJECT_DIR$/ifinder_main/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ifinder_main/views.py" afterPath="$PROJECT_DIR$/ifinder_main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ifinder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,38 +31,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="76" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.13250883" vertical-offset="420" max-vertical-offset="2190">
-              <folding />
+            <state line="96" column="44" selection-start="4433" selection-end="4433" vertical-scroll-proportion="-12.5" vertical-offset="1140" max-vertical-offset="2190">
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#strong#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#strong#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="company_home.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/company/company_home.html">
+      <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ifinder_main/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="31" selection-start="206" selection-end="206" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="315">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar_company.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/company/navbar_company.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="30" selection-start="69" selection-end="69" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="195">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="38" selection-start="1539" selection-end="1539" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="1320">
-              <folding />
+            <state line="9" column="73" selection-start="453" selection-end="453" vertical-scroll-proportion="-0.8333333" vertical-offset="90" max-vertical-offset="1440">
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,7 +63,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="33" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="930">
+            <state line="33" column="46" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1110">
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -76,13 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ifinder/urls.py">
+      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="83" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
+            <state line="31" column="63" selection-start="1030" selection-end="1030" vertical-scroll-proportion="-14.583333" vertical-offset="115" max-vertical-offset="705">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,16 +83,16 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ifinder_main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="15" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="4140">
+            <state line="163" column="106" selection-start="5960" selection-end="5960" vertical-scroll-proportion="0.0" vertical-offset="1935" max-vertical-offset="4140">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views_company.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ifinder_main/views_company.py">
+      <file leaf-file-name="error.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="43" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="3690">
+            <state line="7" column="10" selection-start="169" selection-end="169" vertical-scroll-proportion="0.18551236" vertical-offset="0" max-vertical-offset="566">
               <folding />
             </state>
           </provider>
@@ -123,9 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ifinder_main/forms.py" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
-        <option value="$PROJECT_DIR$/templates/company/search_intern.html" />
         <option value="$PROJECT_DIR$/populate_internfinder.py" />
         <option value="$PROJECT_DIR$/ifinder_main/urls_intern.py" />
         <option value="$PROJECT_DIR$/templates/intern/navbar_intern.html" />
@@ -133,12 +123,15 @@
         <option value="$PROJECT_DIR$/ifinder_main/urls_company.py" />
         <option value="$PROJECT_DIR$/templates/company/company_home.html" />
         <option value="$PROJECT_DIR$/ifinder_main/views_company.py" />
-        <option value="$PROJECT_DIR$/ifinder_main/models.py" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/ifinder/urls.py" />
-        <option value="$PROJECT_DIR$/ifinder_main/views.py" />
         <option value="$PROJECT_DIR$/templates/company/navbar_company.html" />
+        <option value="$PROJECT_DIR$/ifinder_main/forms.py" />
+        <option value="$PROJECT_DIR$/ifinder_main/models.py" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/ifinder_main/views.py" />
+        <option value="$PROJECT_DIR$/templates/error.html" />
       </list>
     </option>
   </component>
@@ -612,39 +605,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/company/search_intern.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="54" selection-start="806" selection-end="806" vertical-scroll-proportion="-17.708334" vertical-offset="25" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/company/company_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="119" selection-start="570" selection-end="570" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ifinder_main/urls_intern.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="483" selection-end="483" vertical-scroll-proportion="0.15254237" vertical-offset="0" max-vertical-offset="590" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="49" selection-start="2214" selection-end="2214" vertical-scroll-proportion="0.74204946" vertical-offset="540" max-vertical-offset="1545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/intern/intern_jobs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/intern/navbar_intern.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="48" selection-start="185" selection-end="185" vertical-scroll-proportion="0.10600707" vertical-offset="0" max-vertical-offset="566" />
@@ -659,67 +619,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="38" selection-start="1539" selection-end="1539" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="1320">
+        <state line="31" column="38" selection-start="1539" selection-end="1539" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ifinder_main/urls_company.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="270" selection-end="270" vertical-scroll-proportion="0.050847456" vertical-offset="0" max-vertical-offset="590">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="33" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="930">
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="4" column="26" selection-start="270" selection-end="270" vertical-scroll-proportion="0.050847456" vertical-offset="0" max-vertical-offset="590" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ifinder_main/views_company.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="43" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3795">
-          <folding />
-        </state>
+        <state line="26" column="43" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3795" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ifinder/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="83" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ifinder_main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="15" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="4140">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/company/company_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="31" selection-start="206" selection-end="206" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="315">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/company/navbar_company.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="30" selection-start="69" selection-end="69" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="195">
+        <state line="1" column="30" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="195">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/ifinder-ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="49" selection-start="2214" selection-end="2214" vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/company/company_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="31" selection-start="206" selection-end="206" vertical-scroll-proportion="0.3180212" vertical-offset="0" max-vertical-offset="566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="63" selection-start="1030" selection-end="1030" vertical-scroll-proportion="-14.583333" vertical-offset="115" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ifinder_main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="46" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1110">
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ifinder_main/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="73" selection-start="453" selection-end="453" vertical-scroll-proportion="-0.8333333" vertical-offset="90" max-vertical-offset="1440">
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="76" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.13250883" vertical-offset="420" max-vertical-offset="2190">
+        <state line="96" column="44" selection-start="4433" selection-end="4433" vertical-scroll-proportion="-12.5" vertical-offset="1140" max-vertical-offset="2190">
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ifinder_main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="106" selection-start="5960" selection-end="5960" vertical-scroll-proportion="0.0" vertical-offset="1935" max-vertical-offset="4140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="10" selection-start="169" selection-end="169" vertical-scroll-proportion="0.18551236" vertical-offset="0" max-vertical-offset="566">
           <folding />
         </state>
       </provider>

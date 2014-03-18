@@ -161,7 +161,7 @@ def user_login(request):
         else:
             # If the user could not be found:
             print "Invalid login details: {0}, {1}".format(username,password)
-            return HttpResponse("Invalid login details supplied.")
+            return render_to_response('error.html', {'error' : 'Invalid login details supplied' }, context)
 
     else:
         return render_to_response('login.html', {'user_type': 0}, context)
