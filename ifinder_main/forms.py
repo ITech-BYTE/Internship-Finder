@@ -50,7 +50,7 @@ class InternForm(forms.ModelForm):
     dob = forms.DateField(help_text="Please enter your date of birth", widget=forms.extras.widgets.SelectDateWidget(attrs={'class':'form-control'},years=range(1980, date.today().year - 18)))
     skills = forms.ModelMultipleChoiceField(help_text="Please select your skills", queryset=Skill.objects.all(), widget=forms.CheckboxSelectMultiple())
     introduction = forms.CharField(max_length=2500, help_text="Please introduce yourself below.", widget=forms.Textarea(attrs={'class': 'form-control'}))
-    education = forms.CharField(max_length=10, help_text="Please enter your most relevant education", widget=forms.TextInput(attrs={'class':'form-control'}))
+    education = forms.CharField(max_length=30, help_text="Please enter your most relevant education", widget=forms.TextInput(attrs={'class':'form-control'}))
 
     class Meta:
         model = Intern
