@@ -36,12 +36,15 @@ def home(request):
 def my_home(request):
     user_type = get_user_type(request.user)
 
+    # if the user is unregistered redirect to general homepage
     if user_type == 0:
         return HttpResponseRedirect('/')
 
+    # if the user is a company redirect to company area
     elif user_type == 1:
         return HttpResponseRedirect('/company/home/')
 
+    # if the user is an intern redirect to intern area
     else:
         return HttpResponseRedirect('/intern/home/')
 

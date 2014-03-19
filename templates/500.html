@@ -3,5 +3,5 @@
 {% block title %} Page not found. {% endblock %}
 
 {% block body_block %}
-    <p> Server error (500) </p>
+    {% include 'error.html' with error='Server error (500)' %}
 {% endblock %}

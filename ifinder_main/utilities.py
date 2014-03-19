@@ -55,7 +55,6 @@ def get_user_type(user):
 
     return user_type
 
-
 def get_is_applicant_of(intern, recruiter):
     rec = Recruiter.objects.filter(id=recruiter.id).filter(offers__in=intern.applications.all())
     return rec

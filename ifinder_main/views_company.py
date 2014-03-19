@@ -24,6 +24,7 @@ def company_home(request):
 
     if user_type == 1:
         company = Recruiter.objects.get(user=request.user)
+        # lates three offers to show on the company welcome screen
         latest = company.offers.order_by('-posting_date')[:3]
 
         context_dict['latest'] = latest
@@ -42,13 +43,16 @@ def my_offers(request):
 
     user_type = get_user_type(request.user)
 
+    # restrict page to recruiters
     if user_type != 1:
         return render_to_response('error.html', {'error' : "This section is only available to Company Users."}, context)
 
 
     else:
+        # get the logged in user
         recruiter = Recruiter.objects.get(user=request.user)
 
+        # get all the jobs for the recruiter
         job_list = recruiter.offers.all()
         context_dict['job_list'] = job_list
         context_dict['user_type'] = get_user_type(request.user)
@@ -62,10 +66,11 @@ def get_applicants(request, internship_id):
 
     context_dict = {}
 
-    is_company = UserProfile.objects.get(user=request.user).is_industrial
+    is_company = (get_user_type(request.user) == 1)
 
     intern_list = []
 
+    # restrict access to company users
     if is_company is False:
         message = "This section is only available to Company Users."
 
@@ -158,6 +163,7 @@ def process_application(request, status):
     context = RequestContext(request)
 
     if request.method == 'GET':
+        # process request if both IDs are available in the request
         if 'intern_id' in request.GET and 'job_id' in request.GET:
             try:
                 recruiter = Recruiter.objects.get(user=request.user)
@@ -167,6 +173,7 @@ def process_application(request, status):
 
                 application = Application.objects.get(intern=intern,job=job)
 
+                # restrict access to that user, who is offering the internship
                 if job.company != recruiter:
                     return render_to_response('error.html', {'error': "You don't have the permission to accept interns for this job"}, context)
 
@@ -175,10 +182,12 @@ def process_application(request, status):
 
                 return render_to_response('company/process_application_feedback.html', {'status': status, 'intern': intern, 'user_type': 1}, context)
 
+            # Invalid data
             except (Intern.DoesNotExist, Job.DoesNotExist, Application.DoesNotExist, Recruiter.DoesNotExist):
                 return render_to_response('error.html', {'error': "Could not process your request"}, context)
 
         else:
+            # Missing data
             return render_to_response('error.html', {'error': "Missing dictionary key"}, context)
 
     else:
@@ -211,6 +220,7 @@ def search_intern(request):
 
     user_type = get_user_type(request.user)
 
+    # restrict access to recruiters
     if user_type != 1:
         return render_to_response('error.html', {'error': "This page is only available to companies"}, context)
 

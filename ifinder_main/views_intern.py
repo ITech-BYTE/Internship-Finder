@@ -72,7 +72,7 @@ def intern_details(request, intern_id):
 
     user_type = get_user_type(request.user)
 
-    permitted = False
+    # restrict access to those recruiters whose offer the intern has applied for
     if user_type == 1:
         company = Recruiter.objects.get(user=request.user)
 
